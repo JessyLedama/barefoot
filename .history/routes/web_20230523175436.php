@@ -2,11 +2,11 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Models\Safari;
-use App\Models\Category;
+use App\Safari;
+use App\Category;
 use App\mail\ContactMail;
 use Illuminate\Http\Request;
-use App\Models\User;
+use App\User;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\CategoryController;
 use App\Http\Controllers\Dashboard\SubCategoryController;

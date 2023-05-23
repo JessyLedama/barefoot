@@ -145,7 +145,7 @@
         @section('content')
         <!-- landing -->
         <section>
-            <!-- Slideshow carousel -->
+            <!--  -->
             <div id="home-slideshow">
                 <div class="home-featured">
                     <img src="images/Lion-Photo.jpg" alt="" class="home-featured-cover">
@@ -186,44 +186,45 @@
             <div class="clearfix campaign-container">
                 @if(!empty($safaris) > 0)    
                     @foreach ($safaris as $safari)
-                        <a class="card-link" href="selected-safari">
-                            <div class="left campaign">
-                                
-                                    <img src="{{ asset('/storage/'.$safari->cover) }}" alt="campaign title" class="campaign-cover"/>
+                    <a class="card-link" href="selected-safari">
+                        <div class="left campaign">
+                            
+                                <img src="{{ asset('/storage/'.$safari->cover) }}" alt="campaign title" class="campaign-cover"/>
 
-                                    <h6 class="campaign-title">
-                                        {{ ucwords($safari->name) }}
-                                    </h6>
-                                    <!-- <div class="clearfix">
-                                        <i class="card-icon fa fa-star"></i>
-                                        <i class="card-icon fa fa-star"></i>
-                                        <i class="card-icon fa fa-star"></i>
-                                        <i class="card-icon fa fa-star"></i>
-                                        <i class="card-icon fa fa-star"></i>
+                                <h6 class="campaign-title">
+                                    {{ ucwords($safari->name) }}
+                                </h6>
+                                <!-- <div class="clearfix">
+                                    <i class="card-icon fa fa-star"></i>
+                                    <i class="card-icon fa fa-star"></i>
+                                    <i class="card-icon fa fa-star"></i>
+                                    <i class="card-icon fa fa-star"></i>
+                                    <i class="card-icon fa fa-star"></i>
 
-                                        <span class="review">5.0</span>
-                                        <span class="review">(5)</span>
-                                    </div> -->
-                                    <p class="campaign-description">
-                                        {{ ucwords($safari->description) }}
-                                    </p>
-                                    <p class="day-card">
-                                    <i class="icon-clock fa fa-clock-o"></i>
-                                        7 Days
-                                    </p>
-                                    <p class="location-card">
-                                    <i class="icon-location fa fa-map-marker"></i>
-                                        Kenya
-                                    </p>
-                                    <span style="margin-right: -8px !important;" class="price-from">from</span>
-                                    <span class="price-card"> 
-                                        $ {{ ucwords($safari->price_from) }} per person
-                                    </span>
-                            </div>  
-                        </a>
+                                    <span class="review">5.0</span>
+                                    <span class="review">(5)</span>
+                                </div> -->
+                                <p class="campaign-description">
+                                    {{ ucwords($safari->description) }}
+                                </p>
+                                <p class="day-card">
+                                <i class="icon-clock fa fa-clock-o"></i>
+                                    7 Days
+                                </p>
+                                <p class="location-card">
+                                <i class="icon-location fa fa-map-marker"></i>
+                                    Kenya
+                                </p>
+                                <span style="margin-right: -8px !important;" class="price-from">from</span>
+                                <span class="price-card"> 
+                                    $ {{ ucwords($safari->price_from) }} per person
+                                </span>
+                        </div>  
+                    </a>
+                    
                     @endforeach
                 @else
-                    <a class="card-link" href="selected-safari">
+                <a class="card-link" href="selected-safari">
                         <div class="left campaign">
                             <h6 class="campaign-title">
                                 There are no safaris to display

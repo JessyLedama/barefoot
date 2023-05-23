@@ -221,6 +221,7 @@
                                     </span>
                             </div>  
                         </a>
+                    
                     @endforeach
                 @else
                     <a class="card-link" href="selected-safari">

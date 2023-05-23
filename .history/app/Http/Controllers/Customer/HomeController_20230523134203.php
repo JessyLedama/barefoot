@@ -4,14 +4,14 @@ namespace App\Http\Controllers\Customer;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Category;
-use App\Models\SubCategory;
-use App\Models\Safari;
-use App\Models\Itinerary;
-use App\Models\Review;
-use App\Models\TouristLocation; 
+use App\Category;
+use App\SubCategory;
+use App\Safari;
+use App\Itinerary;
+use App\Review;
+use App\TouristLocation; 
 use App\Http\Requests\StoreBookingRequest;
-use App\Models\Booking;
+use App\Booking;
 use Mail;
 
 class HomeController extends Controller

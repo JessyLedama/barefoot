@@ -2,15 +2,16 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Models\Safari;
-use App\Models\Category;
+use App\\Safari;
+use App\\Category;
 use App\mail\ContactMail;
 use Illuminate\Http\Request;
-use App\Models\User;
+use App\\User;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\CategoryController;
 use App\Http\Controllers\Dashboard\SubCategoryController;
 use App\Http\Controllers\Dashboard\SafariController;
+use App\Http\Controllers\Customer\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,9 +24,7 @@ use App\Http\Controllers\Dashboard\SafariController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'home'])->name('home');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
