@@ -1,0 +1,16 @@
+
+.booked{
+    margin-top: 127px;
+    margin-left: 6%;
+    text-align: center;
+}
+
+.booked a{
+    color: #f2951b;
+}
+@media(max-width:767){
+    .booking-card {
+        width: 92%;
+        margin-right: 17px;
+    }
+}

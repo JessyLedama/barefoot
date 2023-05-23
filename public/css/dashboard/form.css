@@ -1,0 +1,60 @@
+#form h4 {
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #3c3430;
+}
+#form input:not([type="checkbox"]):not([type="radio"]), #form textarea, #form select {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #f2951b;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    color: #3c3430;
+    width: calc(100% - 42px);
+}
+#form label {
+    padding: 10px;
+    margin: 10px;
+    margin-bottom: 20px;
+    color: #3c3430;
+    width: calc(100% - 42px);
+    display: block;
+}
+.input-group > div {
+    width: 50%;
+}
+#form button {
+    padding: 10px;
+    margin: 20px 10px;
+    width: calc(100% - 20px);
+    color: #fff;
+    background: #3c3430;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: 600;
+}
+#form button:hover {
+    background: #f2951b;
+}
+
+.no-of-people{
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #f2951b;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    color: #3c3430;
+    width: calc(30% - 42px) !important;
+}
+
+.booking{
+    margin-top: 100px !important;
+    margin-right: 85px;
+}
+
+@media (max-width: 767px) {
+    .input-group > div {
+        width: 100%;
+    }
+}

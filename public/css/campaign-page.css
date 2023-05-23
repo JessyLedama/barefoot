@@ -1,0 +1,435 @@
+#campaign-gallery {
+    margin-top: 75px;
+    border-top:1px solid #3c3430;
+    border-left:1px solid #3c3430;
+}
+#campaign-gallery .left, #campaign-gallery .right {
+    width: 50%;
+    height: 458px;
+    border-right:1px solid #3c3430;
+    border-bottom:1px solid #3c3430;
+    padding-left: 0;
+    padding-right: 0;
+}
+#campaign-gallery .left img {
+    height: 70vh;
+    width: 100%;
+}
+#campaign-gallery .right img {
+    height: 35vh;
+}
+#campaign-gallery > .right > .clearfix img {
+    width: 50%;
+}
+#campaign-gallery .right > div:last-child {
+    position: relative;
+    height: 35vh;
+}
+#campaign-gallery .right > div:last-child img {
+    width: 100%;
+}
+#campaign-gallery-view-more {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+}
+#campaign-content {
+    padding: 50px 10%;
+}
+#campaign-intro {
+    width: 60%;
+}
+#campaign-title {
+    color: #3c3430;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    line-height: 1;
+}
+
+.selected-icon {
+    font-size: 15px;
+    color: #f2951b;
+    padding-right:5px;
+}
+.more-info {
+    font-size: 15px;
+    color: #f2951b;
+    padding-right:75px;
+    margin-top:25px;
+}
+
+.more-details {
+    font-size: 13px;
+}
+
+.more-info-text {
+    font-size: 13px;
+    color: #3c3430;
+    margin-top:8px;
+}
+
+#campaign-subtitle {
+    font-size: 15px;
+    font-weight: 400;
+    color: #013644;
+    margin: 0;
+    line-height: 1;
+}
+#campaign-category-location {
+    margin: 24px 0;
+    color: #013644;
+}
+#campaign-category-location a {
+    color: #013644;
+    font-size: 15px;
+    text-decoration: underline;
+}
+#campaign-category-location i {
+    color: #013644;
+}
+#campaign-category {
+    margin-right: 24px;
+}
+#campaign-online-links a {
+    margin-right: 15px;
+    color: #4e9e0a;
+    font-size: 15px;
+}
+#campaign-online-links i {
+    color: #4e9e0a;
+    font-weight: bold;
+}
+#campaign-description {
+    color: #013644;
+}
+#campaign-share-social a {
+    padding: 8px 15px;
+    margin-right: 22px;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 6px;
+    font-size: 14px;
+}
+#campaign-share-social {
+    margin: 40px 0;
+}
+#campaign-share-social a:first-child {
+    background-color: #3b5998;
+}
+#campaign-share-social a:nth-child(2) {
+    background-color: #1da1f2;
+}
+#campaign-share-social a:nth-child(3) {
+    background-color: #1da1f2;
+}
+#campaign-share-social a:last-child {
+    background-color: #4e9e0a;
+    visibility: hidden;
+}
+
+#campaign-fund-stats {
+    padding: 20px;
+    box-shadow: 0 0.3125rem 1rem -0.1875rem rgba(0,0,0,.2);
+    border-radius: 2px;
+    width: calc(35% - 42px);
+}
+#campaign-fund-stats.fix {
+    position: fixed;
+    right: 10%;
+    top: 137px;
+    background: #fff;
+    width: calc(28% - 42px);
+    z-index: -1;
+}
+#campaign-fund-stats h1 {
+    font-size: 30px !important;
+    font-weight: 600 !important;
+}
+#campaign-fund-stats h2 {
+    font-size: 17px !important;
+    font-weight: 400 !important;
+}
+#campaign-fund-stats h1 > span {
+    color: #3c3430 !important;
+    font-size:13px;
+    text-align: center;
+}
+.cost{
+    color: #3c3430 !important;
+    font-size: 10px !important;
+    text-align: center;
+}
+
+.campaign-goal{
+    padding-bottom: 5px;
+}
+
+.price-tag{
+    text-align: center !important;
+    font-size: 20px !important;
+    color: #f2951b !important;
+}
+#campaign-fund-progress {
+    line-height: 1;
+    margin-top: -20px;
+    margin-bottom: 30px;
+}
+#campaign-funds-progress-bar {
+    width: 100%;
+    position: relative
+}
+#campaign-funds-progress-bar:before, #campaign-funds-progress-bar:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: .5rem;
+    margin: calc(7px - 0.25rem) 0;
+}
+#campaign-funds-progress-bar:before {
+    left: 0;
+    width: 60%;
+    background: #4e9e0a;
+    border-radius: 40px;
+}
+#campaign-funds-progress-bar:after {
+    width: calc(40% + 10px);
+    background: #eee;
+    border-radius: 40px;
+    right: 10px;
+    z-index: -1;
+}
+#campaign-fund-total-goal small, #campaign-fund-investors small, #campaign-fund-equity small, #campaign-fund-deadline small {
+    color: grey;
+    display: block;
+    font-weight: 600;
+    font-size: 15px;
+}
+#campaign-invest-btn {
+    padding: 5px;
+    width: calc(65% - 20px);
+    display: block;
+    text-align: center;
+    font-weight: 600;
+    color: #fff;
+    border-radius: 70px;
+    position: relative;
+    background: #f2951b;
+    margin-left: 56px;
+}
+.button-wrapper{
+    text-align: center;
+    padding-top: 13px;
+}
+.vert-rule {
+    border-left: 2px solid #3c3430;
+    height: 150px;
+    margin-left: 6px;
+}
+#campaign-navigation {
+    background: #3c3430;
+    list-style: none;
+    padding: 0 calc(10% - 15px);
+    margin: 0;
+    white-space: nowrap;
+    overflow-x: auto;
+}
+#campaign-navigation.fix {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 1024;
+}
+#campaign-navigation > li {
+    display: inline-block
+}
+.campaign-nav-link {
+    color: #fff;
+    font-weight: 500;
+    padding: 15px;
+    display: block;
+}
+.campaign-nav-link.active, .campaign-nav-link:hover {
+    background-color: #f2951b;
+    text-decoration: none;
+    color: #fff;
+}
+.campaign-stars{
+    color: #f2951b !important;
+}
+.fa-cirlce{
+    margin-left: -6px;
+    margin-bottom: -3px;
+}
+.fa-dot-circle-o i{
+    font-size: 10px !important;
+}
+#campaign-tabs {
+    margin-left: 10%;
+    width: 50%;
+}
+#campaign-tabs *:not(a) {
+    color: #3c3430;
+}
+#campaign-tabs a {
+    color: #4e9e0a;
+    font-weight: 500;
+}
+.campaign-tab-content {
+    padding-top: 50px;
+    color: #3c3430 !important;
+}
+.campaign-tab-content h1, .campaign-tab-content h2 {
+    font-weight: 600 !important;
+}
+.campaign-tab-content h1 {
+    font-size: 40px !important;
+}
+.campaign-tab-content h2 {
+    font-size: 20px !important;
+}
+.campaign-tab-content *:not(h1):not(h2) {
+    font-size: 15px !important;
+}
+.campaign-team-member {
+    width: 100%;
+    margin-right: 5%;
+    margin-bottom: 20px;
+}
+.campaign-team-member img {
+    width: 30%;
+    height: auto;
+    padding-left:5px;
+}
+.campaign-team-member > .clearfix > .right {
+    width: calc(100% - 80px);
+    display: flex;
+    align-items: center;
+    height: 64px;
+}
+.itinerary-text{
+    margin-left:6%;
+}
+.campaign-team-member > .clearfix > .right > span * {
+    display: block;
+    font-weight: bold;
+}
+.campaign-team-member .bio {
+    font-size: 14px;
+    font-weight: 500;
+}
+#campaign-achievements img {
+    width: 100%
+}
+#campaign-risks {
+    padding-left: 15px;
+}
+.campaign-investor {
+    margin-bottom: 40px;
+}
+.campaign-investor > .left {
+    width: 70%;
+}
+.campaign-investor > .right {
+    width: 30%;
+    text-align: right;
+    font-size: 2em;
+}
+.campaign-investor img {
+    width: 64px;
+    height: 64px;
+    border-radius: 100%;
+    background: #ccc;
+}
+.campaign-investor > .left.clearfix > .right {
+    height: 64px;
+    display: flex;
+    align-items: center;
+    width: calc(100% - 80px);
+}
+.campaign-investor .name {
+    display: block;
+}
+.campaign-investor .comment {
+    font-weight: 500;
+}
+
+.br-whatsapp{
+    display: none;
+}
+
+@media (max-width: 767px) {
+    #campaign-gallery{
+        margin-top: 114px;
+    }
+
+    #campaign-gallery .right{
+        width: 50%;
+        height: 335px;
+        border-right: 1px solid #3c3430;
+        border-bottom: 1px solid #3c3430;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    #campaign-gallery .left {
+        height: 335px;
+    }
+    #campaign-gallery .left img {
+        height: 50vh;
+    }
+    #campaign-gallery .right img, #campaign-gallery .right > div:last-child {
+        height: 25vh;
+    }
+    #campaign-gallery-view-more {
+        font-size: 15px;
+    }
+    #campaign-intro {
+        width: 100%;
+    }
+    #campaign-category-location a, #campaign-online-links a {
+        min-width: 40%;
+        display: inline-block;
+        margin-right: 0;
+        line-height: 2;
+    }
+    #campaign-share-social a {
+        padding: 5px 10px;
+        margin-right: 10px;
+        font-size: 14px;
+    }
+    #campaign-share-social a:last-child {
+        visibility: visible;
+    }
+    #campaign-fund-stats {
+        width: calc(100% - 42px);
+    }
+    #campaign-tabs {
+        margin-left: 10%;
+        width: 80%;
+    }
+    .campaign-team-member {
+        width: 100%;
+        margin-right: 0;
+    }
+    .campaign-investor > .left.clearfix > .right {
+        display: block;
+        height: auto;
+    }
+    .campaign-investor > .right {
+        font-size: 1.4em;
+    }
+
+    .br-whatsapp{
+        display: block;
+        margin-bottom: 23px;
+    }
+}

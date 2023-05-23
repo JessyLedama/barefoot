@@ -1,0 +1,39 @@
+#edit-profile-form h4 {
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #3c3430;
+}
+#edit-profile-form input {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #3c3430;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    color: #f2951b;
+}
+#email-input {
+    width: calc(100% - 42px);
+}
+#name-group > input, #password-group > input {
+    width: calc(50% - 42px);
+}
+#edit-profile-form button {
+    padding: 10px;
+    margin: 20px 10px;
+    width: calc(100% - 20px);
+    color: #fff;
+    background: #3c3430;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: 600;
+}
+#edit-profile-form button:hover {
+    background: #f2951b;
+}
+
+@media (max-width: 767px) {
+    #name-group > input, #password-group > input {
+        width: calc(100% - 42px);
+    }
+}

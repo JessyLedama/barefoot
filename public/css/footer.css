@@ -1,0 +1,109 @@
+footer {
+    padding: 10px 0;
+    font-weight: 400;
+}
+footer * {
+    color: #fff;
+}
+footer a:hover {
+    color: #f2951b;
+    font-weight: 400;
+}
+footer > .clearfix {
+    margin: 0 5%;
+}
+footer > .clearfix > div {
+    margin: 10px;
+}
+footer > .clearfix > div:first-child {
+    width: calc(16% - 20px);
+}
+#footer-logo {
+    width: 80%;
+    margin-left: -93px !important;
+    height: auto !important;
+}
+footer > .clearfix > div h4 {
+    margin-bottom: 10px;
+}
+footer > .clearfix > div ul * {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 6px;
+}
+#social-media {
+    padding: 20px 25%;
+}
+#social-media > h3 {
+    margin: 0;
+    font-size: 24px;
+    color: #3c3430;
+    width: 40%;
+}
+#social-media > .right a {
+    padding: 10px 15px;
+    margin: 5px 15px;
+    font-size: 30px;
+    color: #fff !important;
+    background: #3c3430
+}
+#social-media > .right a:hover {
+    background: #f2951b;
+}
+#copyright {
+    font-size: 12px;
+    color: #fff;
+    margin: 16px -12% 0px -90px;
+    padding: 10px 0;
+    border-top: 1px solid #fff;
+}
+#copyright > span {
+    line-height: 34px;
+}
+#brand-designers {
+    color: #fff;
+    margin-left: 20px;
+}
+#brand-designers a {
+    color: #fff;
+    margin-left: 20px;
+}
+#brand-designers a:hover strong {
+    color: #f2951b;
+}
+.designers{
+    font-size: 12px !important;
+}
+
+@media (max-width: 767px) {
+    #social-media > .right a {
+        padding: 10px 14px;
+        margin: 5px 3px 0 4px;
+        font-size: 25px;
+        color: #fff;
+        background: #3c3430;
+    }
+    #social-media {
+        padding: 20px 20%;
+    }
+    #copyright {
+        margin: 30px calc(-9% + 10px);
+    }
+    #copyright > span {
+        float: none;
+    }
+    #copyright * {
+        font-size: 12px;
+    }
+    #brand-designers {
+        margin-left: 0;
+    }
+    #footer-logo {
+        width: 70%;
+        margin-left: -9px !important;
+        height: auto !important;
+        margin-bottom: -9px;
+        margin-top: -33px;
+    }
+}
