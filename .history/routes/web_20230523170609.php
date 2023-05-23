@@ -10,7 +10,6 @@ use App\User;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\CategoryController;
 use App\Http\Controllers\Dashboard\SubCategoryController;
-use App\Http\Controllers\Dashboard\SafariController;
 
 /*
 |--------------------------------------------------------------------------
@@ -185,16 +184,13 @@ Route::prefix('account')->group(function () {
  */
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::prefix('dashboard')->middleware(['auth', ])->group(function () { 
-    
-    // Categories
+Route::prefix('dashboard')->middleware(['auth', ])->group(function () {    
     Route::prefix('categories')->group(function(){
         Route::get('index', [CategoryController::class, 'index'])->name('admin.categories.index');
         Route::get('create', [CategoryController::class, 'create'])->name('admin.categories.create');
         Route::post('create', [CategoryController::class, 'store'])->name('admin.categories.store');
     });
 
-    // Subcategories
     Route::prefix('subcategories')->group(function(){
         Route::get('index', [SubCategoryController::class, 'index'])->name('admin.subcategories.index');
         Route::get('create', [SubCategoryController::class, 'create'])->name('admin.subcategories.create');
@@ -203,13 +199,12 @@ Route::prefix('dashboard')->middleware(['auth', ])->group(function () {
         Route::get('/delete', [SubCategoryController::class, 'destroy'])->name('admin.subcategories.destroy');
     });
 
-    // Safaris
-    Route::prefix('safaris')->group(function(){
-        Route::get('index', [SafariController::class, 'index'])->name('admin.safaris.index');
-        Route::get('create', [SafariController::class, 'create'])->name('admin.safaris.create');
-        Route::post('create', [SafariController::class, 'store'])->name('admin.safaris.store');
-        Route::get('edit', [SafariController::class, 'edit'])->name('admin.safaris.edit');
-        Route::get('/delete', [SafariController::class, 'destroy'])->name('admin.safaris.destroy');
+    Route::prefix('subcategories')->group(function(){
+        Route::get('index', [SubCategoryController::class, 'index'])->name('admin.subcategories.index');
+        Route::get('create', [SubCategoryController::class, 'create'])->name('admin.subcategories.create');
+        Route::post('create', [SubCategoryController::class, 'store'])->name('admin.subcategories.store');
+        Route::get('edit', [SubCategoryController::class, 'edit'])->name('admin.subcategories.edit');
+        Route::get('/delete', [SubCategoryController::class, 'destroy'])->name('admin.subcategories.destroy');
     });
 
     Route::view('menu', 'dashboard.mobile-menu')->name('dashboard.menu');

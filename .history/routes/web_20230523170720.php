@@ -10,7 +10,6 @@ use App\User;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\CategoryController;
 use App\Http\Controllers\Dashboard\SubCategoryController;
-use App\Http\Controllers\Dashboard\SafariController;
 
 /*
 |--------------------------------------------------------------------------

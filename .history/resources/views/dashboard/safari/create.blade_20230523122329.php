@@ -13,12 +13,12 @@
         @include('dashboard.menu')
 
         <article class="card pull-right">
-            <form action="{{ route('admin.safaris.store') }}" method="post" id="form" enctype="multipart/form-data">
+            <form action="{{ route('safari.store') }}" method="post" id="form" enctype="multipart/form-data">
 
                 @csrf
 
                 <h4 class="mobile">
-                    <a href="{{ route('admin.safaris.store') }}" id="back-to-menu">
+                    <a href="{{ route('dashboard.menu') }}" id="back-to-menu">
                         <i class="lnr lnr-arrow-left"></i>
                     </a>
     

@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\Models\Safari;
-use App\Models\SubCategory;
-use App\Models\Category;
-use App\Models\Itinerary;
+use App\Safari;
+use App\SubCategory;
+use App\Category;
+use App\Itinerary;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreSafariRequest;
 use App\Http\Requests\UpdateSafariRequest;
 use Storage;
-use App\Models\Review;
+use App\Review;
 
 class SafariController extends Controller
 {

@@ -17,7 +17,7 @@
     <h4 style="margin-top: 20px;">Itinerary Day</h4>
     <div class="input-group clearfix" id="name-group">
         <div class="pull-left">
-            <input type="text" placeholder="Itinerary Day" value="{{ old('itinerary_day', $itinerary_day ?? '') }}" name="itinerary_day ">
+            <input type="text" placeholder="Itinerary Day" value="{{ old('itinerary_day', $itinerary_day ?? '') }}" name="itinerary_day[]">
 
             @error('itinerary_day')
                 <span class="invalid-feedback" role="alert">

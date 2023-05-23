@@ -70,7 +70,7 @@
                     <h2>
                         Create new safaris
                     </h2>
-                    <a href="{{ route('admin.safaris.create') }}"> Create New Safaris </a>
+                    <a href="{{ route('admin.safaris.create') }}"> Create New  </a>
                 </div>
                 @endif
             </div>

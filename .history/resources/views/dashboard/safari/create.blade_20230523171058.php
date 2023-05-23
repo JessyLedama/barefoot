@@ -18,7 +18,7 @@
                 @csrf
 
                 <h4 class="mobile">
-                    <a href="{{ route('admin.safaris.store') }}" id="back-to-menu">
+                    <a href="{{ route('dashboard.menu') }}" id="back-to-menu">
                         <i class="lnr lnr-arrow-left"></i>
                     </a>
     

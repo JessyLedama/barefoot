@@ -9,7 +9,7 @@ use Illuminate\Support\Str;
 
 class Safari extends Model
 {
-    protected $fillable = ['name', 'slug', 'price_from','residents_price', 'non_residents_price', 'entry_fee','transport','tour_guide', 'drinks', 'lunch', 'dinner', 'accomodation', 'description', 'location', 'map', 'link', 'featured', 'cover', 'gallery', 'subcategoryId', 'itineraryId',];
+    protected $fillable = ['name', 'slug', 'price_from','residents_price', 'non_residents_price', 'entry_fee','transport','tour_guide', 'drinks', 'lunch', 'dinner', 'accomodation','shortDescription', 'description', 'location', 'map', 'link', 'featured', 'cover', 'gallery', 'subcategoryId',  'itineraryId',];
 
     protected $primaryKey = 'id';
 
