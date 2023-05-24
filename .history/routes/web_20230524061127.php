@@ -213,7 +213,7 @@ Route::prefix('dashboard')->middleware(['auth', ])->group(function () {
         Route::post('create', [SafariController::class, 'store'])->name('admin.safaris.store');
         Route::get('edit', [SafariController::class, 'edit'])->name('admin.safaris.edit');
         Route::delete('/delete', [SafariController::class, 'destroy'])->name('admin.safaris.destroy');
-        Route::delete('safaris/{safari}/delete/gallery', [SafariController::class, 'destroyInGallery'])->name('safari.destroy.gallery');
+        Route::delete('safari/{safari}/delete/gallery', [SafariController::class, 'destroyInGallery'])->name('safari.destroy.gallery');
         
     });
 

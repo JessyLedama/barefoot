@@ -59,7 +59,7 @@
                                 Delete
                             </a>
 
-                            <form id="delete-form-{{ $category->id }}" action="{{ route('admin.categories.destroy', $category) }}" method="post">
+                            <form id="delete-form-{{ $category->id }}" action="{{ route('category.destroy', $category) }}" method="post">
 
                                 @csrf
 

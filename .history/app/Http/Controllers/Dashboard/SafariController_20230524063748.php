@@ -12,7 +12,7 @@ use App\Http\Requests\StoreSafariRequest;
 use App\Http\Requests\UpdateSafariRequest;
 use Storage;
 use App\Models\Review;
-    
+
 class SafariController extends Controller
 {
     /**
@@ -77,7 +77,7 @@ class SafariController extends Controller
 
         }, $request->file('itinerary_image') ?? []);
 
-        $iDay = [] + $request->itinerary_day ?? $safari->name;
+        $iDay = [] + $request->itinerary_day ?? '';
         $iDescription = [] + $request->itinerary_description ?? $safari->name;
         $tActivities = [] + $request->trip_activities_description ?? $safari->name;
         $safari->itinerary()->create([

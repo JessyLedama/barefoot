@@ -124,7 +124,7 @@
                                     </span>
                                 </li>
                                 <li>
-                                    
+                                    <!-- <span onclick="window.location.href = `{{ route(Auth::user()->role == 'customer' ? 'customer.safari.index' : 'safari.index') }}`"> -->
                                         <i class="lni-package"></i>
 
                                         Safaris
@@ -216,7 +216,7 @@
                                     </span>
                                 </li>
                                 <li>
-                                    
+                                    <span onclick="window.location.href = `{{ route(Auth::user()->role == 'customer' ? 'customer.safari.index' : 'safari.index') }}`">
                                         <i class="lni-package"></i>
 
                                         Safaris

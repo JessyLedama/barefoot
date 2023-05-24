@@ -67,7 +67,7 @@
                     @endforeach
 
                     <div class="p-6 text-gray-900 dark:text-gray-100">
-                        <a class="btn button btn-primary" href="{{ route('admin.safaris.create') }}"> Create More Safaris </a>
+                        <a class="btn button btn-primary" href="{{ route('admin.categories.create') }}"> Create More Safaris </a>
                     </div>
                 @else
                 <div class="p-6 text-gray-900 dark:text-gray-100">

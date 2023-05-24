@@ -30,7 +30,7 @@
                         Categories
                     </h4>
 
-                    <a href="{{ route('admin.categories.create') }}">
+                    <a href="{{ route('category.create') }}">
                         <i class="lnr lnr-file-add"></i>
                         Add category
                     </a>
@@ -49,7 +49,7 @@
                         </div>
 
                         <div class="manage-category pull-right">
-                            <a href="{{ route('admin.categories.edit', $category) }}">
+                            <a href="{{ route('category.edit', $category) }}">
                                 <i class="lni-pencil-alt"></i>
                                 Edit
                             </a>
@@ -59,7 +59,7 @@
                                 Delete
                             </a>
 
-                            <form id="delete-form-{{ $category->id }}" action="{{ route('admin.categories.destroy', $category) }}" method="post">
+                            <form id="delete-form-{{ $category->id }}" action="{{ route('category.destroy', $category) }}" method="post">
 
                                 @csrf
 

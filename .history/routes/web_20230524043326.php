@@ -193,8 +193,7 @@ Route::prefix('dashboard')->middleware(['auth', ])->group(function () {
         Route::get('create', [CategoryController::class, 'create'])->name('admin.categories.create');
         Route::post('create', [CategoryController::class, 'store'])->name('admin.categories.store');
         Route::get('edit', [CategoryController::class, 'edit'])->name('admin.categories.edit');
-        Route::post('edit', [CategoryController::class, 'update'])->name('admin.categories.update');
-        Route::get('delete', [CategoryController::class, 'destroy'])->name('admin.categories.destroy');
+        Route::post('edit', [SubCategoryController::class, 'update'])->name('admin.subcategories.update');
     });
 
     // Subcategories
@@ -212,14 +211,18 @@ Route::prefix('dashboard')->middleware(['auth', ])->group(function () {
         Route::get('create', [SafariController::class, 'create'])->name('admin.safaris.create');
         Route::post('create', [SafariController::class, 'store'])->name('admin.safaris.store');
         Route::get('edit', [SafariController::class, 'edit'])->name('admin.safaris.edit');
-        Route::delete('/delete', [SafariController::class, 'destroy'])->name('admin.safaris.destroy');
-        Route::delete('safaris/{safari}/delete/gallery', [SafariController::class, 'destroyInGallery'])->name('safari.destroy.gallery');
-        
+        Route::get('/delete', [SafariController::class, 'destroy'])->name('admin.safaris.destroy');
     });
 
     Route::view('menu', 'dashboard.mobile-menu')->name('dashboard.menu');
+
+    Route::delete('safari/{safari}/delete/gallery', 'Dashboard\SafariController@destroyInGallery')->name('safari.destroy.gallery');
     
-    
+    Route::post('safari/save', 'Dashboard\SafariController@store')->name('safari.store');
+
+    Route::resource('safari', 'Dashboard\SafariController')->except(['store']);
+
+    Route::resource('safari', 'Dashboard\SafariController')->except(['create', 'show', 'store']);
 
     Route::get('account', 'Dashboard\AccountController@edit')->name('account.edit');
 

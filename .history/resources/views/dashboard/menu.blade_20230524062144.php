@@ -71,7 +71,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('admin.safaris.create') }}">
+                    <a href="{{ route('safari.create') }}">
                         Add Safari
                     </a>
                 </li>

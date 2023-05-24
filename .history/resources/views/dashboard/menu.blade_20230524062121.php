@@ -71,7 +71,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('admin.safaris.create') }}">
+                    <a href="{{ route('safari.create') }}">
                         Add Safari
                     </a>
                 </li>
@@ -147,7 +147,7 @@
                 break;
 
             case "{{ route('admin.safaris.index') }}":
-            case "{{ route('admin.safaris.create') }}":
+            case "{{ route('safari.create') }}":
 
                 $('#safaris-sub-menu').css('display', 'block');
                 $('*[data-toggle="safaris-sub-menu"], #safaris-sub-menu').addClass('link-active');
