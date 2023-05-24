@@ -68,7 +68,9 @@
         <a class="card-link" href="{{ url("/safaris/{$safari->id}") }}"> 
             <div class="left campaign">
                 
-                <img src="{{ asset('/storage/'.$safari->cover) }}" alt="campaign title" class="campaign-cover"/>
+                <!-- <img src="{{ asset('/storage/'.$safari->cover) }}" alt="campaign title" class="campaign-cover"/> -->
+
+                <img src="{{ HTML::image('/storage/'.$safari->cover) }}" alt="campaign title" class="campaign-cover"/>
 
                 <h6 class="campaign-title">
                     {{ ucwords($safari->name) }}

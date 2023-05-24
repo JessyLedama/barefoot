@@ -11,7 +11,7 @@ use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\CategoryController;
 use App\Http\Controllers\Dashboard\SubCategoryController;
 use App\Http\Controllers\Dashboard\SafariController;
-use App\Http\Controllers\Customer\HomeController;
+use App\Http\Controllers\Dashboard\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,7 +36,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/safaris/{safari}', [HomeController::class, 'show']);
+Route::get('/safaris/{safari}', 'Customer\HomeController@show');
 
 Route::get('/kenya-safaris/', 'Customer\HomeController@kenyaSafaris');
 

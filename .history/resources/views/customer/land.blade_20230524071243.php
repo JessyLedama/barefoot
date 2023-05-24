@@ -1,13 +1,13 @@
 @extends('layouts.app-pages')
 
 @section('content')
-<!-- <div id="first-page-preloader">
+<div id="first-page-preloader">
         <img src="{{ asset('images/Barefoot-Adventure-Logo.png') }}" alt="Barefoot Adventures">
 
         <div id="line-preloader"></div>
-</div> -->
-<!-- 
-    <home></home> -->
+</div>
+
+    <home></home>
 
 <section>
     <div id="home-slideshow">

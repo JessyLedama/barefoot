@@ -70,6 +70,8 @@
                 
                 <img src="{{ asset('/storage/'.$safari->cover) }}" alt="campaign title" class="campaign-cover"/>
 
+                <img src="{{ asset('/storage/'.$safari->cover) }}" alt="campaign title" class="campaign-cover"/>
+
                 <h6 class="campaign-title">
                     {{ ucwords($safari->name) }}
                 </h6>

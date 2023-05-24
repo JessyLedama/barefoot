@@ -6,8 +6,8 @@
 
         <div id="line-preloader"></div>
 </div> -->
-<!-- 
-    <home></home> -->
+
+    <home></home>
 
 <section>
     <div id="home-slideshow">

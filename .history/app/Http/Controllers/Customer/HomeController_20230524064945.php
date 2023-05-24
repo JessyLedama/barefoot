@@ -30,9 +30,10 @@ class HomeController extends Controller
  
         $featuredSafaris = Safari::whereFeatured(true)->inRandomOrder()->take(3)->get();
 
-        // $safaris = Safari::with('subCategory')->all();
+        $safaris = Safari::with('subCategory')->all();
 
-        $kenyaSafaris = Safari::where('subcategoryId', 1)->take(3)->get();
+        // $kenyaSafaris = Safari::where('subcategoryId', 1)->take(3)->get();
+        $kenyaSafaris = 
 
         $kenyaLocalSafaris = Safari::where(['subcategoryId' => 1, 'subcategoryId' => 1])->take(6)->get();
 

@@ -155,7 +155,7 @@
         @endphp
 
         <h2>Itinerary</h2>
-        @if(!empty($everythingIt))
+        @if(!empty($day))
             @for( $i = 0; $i < $count; $i++)
             <div id='itd@php echo $day[0] @endphp' class="it_day clearfix">
                 
@@ -182,7 +182,7 @@
                 </div>
             </div>
             @endfor
-        
+        @endif
 
         <div id='tr@php echo $trActivities[0] @endphp' class="trip-activities">
             <h2>Trip Activities</h2> 
@@ -197,7 +197,6 @@
                 {!! ucwords($safari->description) !!}
             </p>
         </div>
-        @endif
     </div>
 
     <!--<div id="campaign-reviews" class="campaign-tab-content">

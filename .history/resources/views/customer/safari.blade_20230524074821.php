@@ -197,7 +197,6 @@
                 {!! ucwords($safari->description) !!}
             </p>
         </div>
-        @endif
     </div>
 
     <!--<div id="campaign-reviews" class="campaign-tab-content">

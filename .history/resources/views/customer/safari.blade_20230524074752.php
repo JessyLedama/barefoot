@@ -182,7 +182,7 @@
                 </div>
             </div>
             @endfor
-        
+        @endif
 
         <div id='tr@php echo $trActivities[0] @endphp' class="trip-activities">
             <h2>Trip Activities</h2> 
@@ -197,7 +197,6 @@
                 {!! ucwords($safari->description) !!}
             </p>
         </div>
-        @endif
     </div>
 
     <!--<div id="campaign-reviews" class="campaign-tab-content">

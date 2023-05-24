@@ -36,7 +36,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/safaris/{safari}', [HomeController::class, 'show']);
+Route::get('/safaris/{safari}', [HomeController, 'show');
 
 Route::get('/kenya-safaris/', 'Customer\HomeController@kenyaSafaris');
 
