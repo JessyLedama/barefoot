@@ -157,28 +157,30 @@
         <h2>Itinerary</h2>
         @if(!empty($everythingIt))
             @for( $i = 0; $i < $count; $i++)
-                <div id='itd@php echo $day[0] @endphp' class="it_day clearfix">
-                    
-                    <h2 style="margin-bottom:0">
-                        Day
-                        @php
-                            echo array_values($day)[$i];
-                        @endphp
-                    </h2>
-                    <i class="fa fa-circle"></i>
-                    
-                    <div class="vert-rule">
-                        <div class="campaign-team-member left">
-                            <div class="clearfix">
-                                <div class="itinerary-text"> 
-                                    @php
-                                        echo array_values($description)[$i];
-                                    @endphp
-                                </div>                  
-                            </div> 
-                        </div>
+            <div id='itd@php echo $day[0] @endphp' class="it_day clearfix">
+                
+                <h2 style="margin-bottom:0">
+                    Day
+                    @php
+                        echo array_values($day)[$i];
+                    @endphp
+                </h2>
+                <i class="fa fa-circle"></i>
+                
+                <div class="vert-rule">
+                    <div class="campaign-team-member left">
+                        <div class="clearfix">
+                            
+                            <div class="itinerary-text"> 
+                                @php
+                                    echo array_values($description)[$i];
+                                @endphp
+                            </div>  
+                                                
+                        </div> 
                     </div>
                 </div>
+            </div>
             @endfor
 
             <div id='tr@php echo $trActivities[0] @endphp' class="trip-activities">

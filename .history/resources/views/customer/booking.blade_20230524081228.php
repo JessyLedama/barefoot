@@ -112,10 +112,10 @@
 
                         Citizen 
                         <br />
-                        <input onclick="myFunction()" id="itinerary" type="radio" value="true" name="citizenship" {{ old('radio') == true ? 'checked' : ''}}>
+                        <input onclick="myFunction()" id="itinerary" type="radio" value="true" name="resident" {{ old('radio') == true ? 'checked' : ''}}>
                         Resident
                         <br />
-                        <input onclick="myFunction()" id="itinerary" type="radio" value="true" name="citizenship" {{ old('radio') == true ? 'checked' : ''}}>
+                        <input onclick="myFunction()" id="itinerary" type="radio" value="true" name="non_resident" {{ old('radio') == true ? 'checked' : ''}}>
                         Non Resident
                     </label>
                 </div>

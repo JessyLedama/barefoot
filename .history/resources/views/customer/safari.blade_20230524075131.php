@@ -170,11 +170,13 @@
                     <div class="vert-rule">
                         <div class="campaign-team-member left">
                             <div class="clearfix">
+                                
                                 <div class="itinerary-text"> 
                                     @php
                                         echo array_values($description)[$i];
                                     @endphp
-                                </div>                  
+                                </div>  
+                                                    
                             </div> 
                         </div>
                     </div>

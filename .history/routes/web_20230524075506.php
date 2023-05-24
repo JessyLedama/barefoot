@@ -51,7 +51,7 @@ Route::get('/tanzania-safaris/', 'Customer\HomeController@tanzaniaSafaris');
 Route::get('/gallery/', 'Customer\HomeController@gallery');
 
 Route::get('/booking/{safari}', [HomeController::class, 'booking']);
-Route::post('booking.store', [HomeController::class, 'storeBooking'])->name('booking.store');
+Route::post('booking.store', [Customer\HomeController@storeBooking')->name('booking.store');
 
 Route::get('/contact-us/', function(){
     return view('customer.contact-us');

@@ -14,7 +14,7 @@ class UpdateBookingsTable extends Migration
     public function up()
     {
         Schema::table('bookings', function (Blueprint $table) {
-                // 
+                $table->string('radio');
             });
     }
 
