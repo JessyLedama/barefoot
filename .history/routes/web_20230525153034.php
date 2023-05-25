@@ -227,7 +227,7 @@ Route::prefix('dashboard')->middleware(['auth', ])->group(function () {
     
     
 
-    Route::get('account', [AccountController::class, 'edit'])->name('account.edit');
+    Route::get('account', [AccountController::index, 'edit'])->name('account.edit');
 
     Route::put('account/update', [AccountController::class, 'update'])->name('account.update');
 

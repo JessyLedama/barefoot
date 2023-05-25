@@ -14,7 +14,6 @@ use App\Http\Controllers\Dashboard\SafariController;
 use App\Http\Controllers\Customer\HomeController;
 use App\Http\Controllers\Customer\TouristLocationsController;
 use App\Http\Controllers\Dashboard\TouristLocationsController as AdminTourist;
-use App\Http\Controllers\Customer\AccountController;
 
 /*
 |--------------------------------------------------------------------------
@@ -132,11 +131,11 @@ Route::prefix('account')->group(function () {
 
         Route::name('customer.profile.')->group(function () {
 
-            Route::get('menu', [AccountController::class, 'menu'])->name('menu');
+            Route::get('menu', 'Customer\AccountController@menu')->name('menu');
 
-            Route::get('edit', [AccountController::class, 'edit'])->name('edit');
+            Route::get('edit', 'Customer\AccountController@edit')->name('edit');
     
-            Route::put('update', [AccountController::class, 'update'])->name('update');
+            Route::put('update', 'Customer\AccountController@update')->name('update');
         });
 
         Route::resource('address-book', 'Customer\AddressController')->except('show')->parameters([
@@ -227,9 +226,9 @@ Route::prefix('dashboard')->middleware(['auth', ])->group(function () {
     
     
 
-    Route::get('account', [AccountController::class, 'edit'])->name('account.edit');
+    Route::get('account', [Dashboard\AccountController@edit')->name('account.edit');
 
-    Route::put('account/update', [AccountController::class, 'update'])->name('account.update');
+    Route::put('account/update', 'Dashboard\AccountController@update')->name('account.update');
 
     // Tourist Locations
     Route::prefix('tourist-locations')->group(function(){

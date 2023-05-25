@@ -136,7 +136,7 @@ Route::prefix('account')->group(function () {
 
             Route::get('edit', [AccountController::class, 'edit'])->name('edit');
     
-            Route::put('update', [AccountController::class, 'update'])->name('update');
+            Route::put('update', [AccountController@update')->name('update');
         });
 
         Route::resource('address-book', 'Customer\AddressController')->except('show')->parameters([
@@ -227,7 +227,7 @@ Route::prefix('dashboard')->middleware(['auth', ])->group(function () {
     
     
 
-    Route::get('account', [AccountController::class, 'edit'])->name('account.edit');
+    Route::get('account', [AccountController::index, 'edit'])->name('account.edit');
 
     Route::put('account/update', [AccountController::class, 'update'])->name('account.update');
 
