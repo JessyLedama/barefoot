@@ -14,7 +14,7 @@
                     <span class="pull-left">
                             Safaris
                     </span>
-                    <a href="{{ route('admin.safaris.create') }}" class="pull-right">
+                    <a href="{{ route('admin.safari.create') }}" class="pull-right">
                         Add safari
                     </a>
                 </h4>

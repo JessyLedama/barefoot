@@ -1,4 +1,4 @@
-@extends('layouts.app-pages')
+@extends(layouts.app-pages)
 
 <x-app-layout>
     <x-slot name="header">

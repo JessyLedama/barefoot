@@ -1,4 +1,4 @@
-@extends('layouts.app-pages')
+
 
 <x-guest-layout>
     <!-- Session Status -->
