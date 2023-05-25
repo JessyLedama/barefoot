@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\TouristLocation;
 use Auth;
-use App\Models\Review;
+use App\Review;
 
 class TouristLocationsController extends Controller
 {
@@ -60,12 +60,5 @@ class TouristLocationsController extends Controller
         $location = TouristLocation::where('id', $slug)->first();
 
         return view('customer.location', compact('location'));
-    }
-
-    public function index(){
-        $touristLocations = TouristLocation::latest()->paginate();
-        $locationCount = count($touristLocations);
-
-        return view('customer.tourist-locations', compact('touristLocations', 'locationCount'));
     }
 }

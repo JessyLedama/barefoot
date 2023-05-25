@@ -233,6 +233,8 @@ Route::prefix('dashboard')->middleware(['auth', ])->group(function () {
     // Tourist Locations
     Route::prefix('tourist-locations')->group(function(){
         
+        Route::resource('location', [AdminTourist::class])->except(['store']);
+        
         Route::get('index', [AdminTourist::class, 'index'])->name('admin.locations.index');
 
         Route::get('{location}', [AdminTourist::class, 'show'])->name('admin.locations.show');

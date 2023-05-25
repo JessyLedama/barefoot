@@ -59,8 +59,8 @@ Route::get('/contact-us/', function(){
     return view('customer.contact-us');
 });
  
-Route::get('/tourist-locations', [TouristLocationsController::class, 'index']);
-Route::get('/location/{location}', [TouristLocationsController::class, 'show']);
+Route::get('/tourist-locations/', [TouristLocationsController::class, 'index']);
+Route::get('/location/{location}', 'Customer\TouristLocationsController@show');
 
 Route::get('/frequently-asked-questions/', function(){
     return view('customer.faq');
@@ -230,16 +230,12 @@ Route::prefix('dashboard')->middleware(['auth', ])->group(function () {
 
     Route::put('account/update', 'Dashboard\AccountController@update')->name('account.update');
 
-    // Tourist Locations
     Route::prefix('tourist-locations')->group(function(){
-        
-        Route::get('index', [AdminTourist::class, 'index'])->name('admin.locations.index');
+        Route::post('create', [AdminTourist::class, 'store'])->name('location.store');
 
-        Route::get('{location}', [AdminTourist::class, 'show'])->name('admin.locations.show');
-
-        Route::get('create', [AdminTourist::class, 'create'])->name('admin.locations.create');
-
-        Route::post('create', [AdminTourist::class, 'store'])->name('admin.locations.store');
+        Route::resource('location', [])->except(['store']);
+    
+        Route::resource('location', 'Dashboard\TouristLocationsController')->except(['create', 'show', 'store']);
     });
 
 

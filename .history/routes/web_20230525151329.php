@@ -60,7 +60,7 @@ Route::get('/contact-us/', function(){
 });
  
 Route::get('/tourist-locations', [TouristLocationsController::class, 'index']);
-Route::get('/location/{location}', [TouristLocationsController::class, 'show']);
+Route::get('/location/{location}', [Customer\TouristLocationsController@show');
 
 Route::get('/frequently-asked-questions/', function(){
     return view('customer.faq');
@@ -233,13 +233,9 @@ Route::prefix('dashboard')->middleware(['auth', ])->group(function () {
     // Tourist Locations
     Route::prefix('tourist-locations')->group(function(){
         
-        Route::get('index', [AdminTourist::class, 'index'])->name('admin.locations.index');
-
-        Route::get('{location}', [AdminTourist::class, 'show'])->name('admin.locations.show');
-
-        Route::get('create', [AdminTourist::class, 'create'])->name('admin.locations.create');
-
-        Route::post('create', [AdminTourist::class, 'store'])->name('admin.locations.store');
+        Route::resource('location', [AdminTourist::class])->except(['store']);
+        
+        Route::post('create', [AdminTourist::class, 'store'])->name('location.store');
     });
 
 

@@ -63,9 +63,6 @@ class TouristLocationsController extends Controller
     }
 
     public function index(){
-        $touristLocations = TouristLocation::latest()->paginate();
-        $locationCount = count($touristLocations);
-
-        return view('customer.tourist-locations', compact('touristLocations', 'locationCount'));
+        
     }
 }
