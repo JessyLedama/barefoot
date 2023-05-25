@@ -81,12 +81,7 @@ class HomeController extends Controller
         $safaris = Safari::with('subCategory')->get();
         $kenyaCategory = Category::where('slug', 'kenya-safaris')->first();
         
-        foreach($safaris as $safari){
-            if($safari->subCategory->categoryId == $kenyaCategory->id){
-                array_push($kenyaSafaris, $safari);
-            }
-        }
-
+        array_pu
         $kenyaSafarisCount = count($kenyaSafaris);
         
         return view('customer/allsafaris/kenya', compact('kenyaSafaris', 'kenyaSafarisCount'));

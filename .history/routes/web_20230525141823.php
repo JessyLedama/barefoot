@@ -38,7 +38,7 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/safaris/{safari}', [HomeController::class, 'show']);
 
-Route::get('/kenya-safaris/', [HomeController::class, 'kenyaSafaris']);
+Route::get('/kenya-safaris/', []HomeController::class, 'kenyaSafaris');
 
 Route::get('/kenya-local-safaris/', 'Customer\HomeController@kenyaLocalSafaris');
 

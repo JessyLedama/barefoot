@@ -66,6 +66,8 @@
                     <span class="price-card pr{{$safari->price_from}}">Ksh{{ ucwords($safari->price_from) }}</span>
                     <span class="per-person pr{{$safari->price_from}}">per person</span> <br class="for-mobile"/>
                     <span class="campaign-view">View</span>
+
+                    {{  }}
             </div>  
         </a>
     @endforeach

@@ -77,17 +77,8 @@ class HomeController extends Controller
 
     public function kenyaSafaris()
     {   
-        $kenyaSafaris = [];
-        $safaris = Safari::with('subCategory')->get();
-        $kenyaCategory = Category::where('slug', 'kenya-safaris')->first();
-        
-        foreach($safaris as $safari){
-            if($safari->subCategory->categoryId == $kenyaCategory->id){
-                array_push($kenyaSafaris, $safari);
-            }
-        }
-
-        $kenyaSafarisCount = count($kenyaSafaris);
+        $kenyaSafaris = Safari::with('subCategory')->get();
+        $kenyaSafarisCount = count($ken);
         
         return view('customer/allsafaris/kenya', compact('kenyaSafaris', 'kenyaSafarisCount'));
     }

@@ -6,7 +6,7 @@
 <div>
     <img src="images/antelopes-playing.jpg" alt="" class="photo-cover-pages">
             <h4 class="safari-cover-caption">
-                Kenya Safaris 
+                Kenya Safaris {{ $kenyasafaris }}
             </h4>
 
     
