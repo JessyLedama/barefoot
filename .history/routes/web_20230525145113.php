@@ -46,7 +46,7 @@ Route::get('/kenya-multiple-day-safaris/', 'Customer\HomeController@kenyaMultipl
 
 Route::get('/uganda-safaris/', [HomeController::class, 'ugandaSafaris']);
 
-Route::get('/tanzania-safaris/', [HomeController::class, 'tanzaniaSafaris']);
+Route::get('/tanzania-safaris/', 'HomeController::classtanzaniaSafaris');
 
 Route::get('/gallery/', 'Customer\HomeController@gallery');
 

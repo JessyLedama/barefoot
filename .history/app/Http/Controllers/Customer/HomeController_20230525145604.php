@@ -127,17 +127,17 @@ class HomeController extends Controller
 
     public function tanzaniaSafaris()
     {
-        $tanzaniaSafaris = [];
+        $ugandaSafaris = [];
         $safaris = Safari::with('subCategory')->get();
-        $tanzaniaCategory = Category::where('slug', 'tanzania-safaris')->first();
+        $ugandaCategory = Category::where('slug', 'uganda-safaris')->first();
         
         foreach($safaris as $safari){
-            if($safari->subCategory->categoryId == $tanzaniaCategory->id){
-                array_push($tanzaniaSafaris, $safari);
+            if($safari->subCategory->categoryId == $ugandaCategory->id){
+                array_push($ugandaSafaris, $safari);
             }
         }
 
-        $tanzaniaSafarisCount = count($tanzaniaSafaris);
+        $ugandaSafarisCount = count($ugandaSafaris);
 
         return view('customer/allsafaris/tanzania', compact('tanzaniaSafaris', 'tanzaniaSafarisCount'));
     }

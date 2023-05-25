@@ -110,34 +110,25 @@ class HomeController extends Controller
 
     public function ugandaSafaris()
     {
-        $ugandaSafaris = [];
+        $kenyaSafaris = [];
         $safaris = Safari::with('subCategory')->get();
-        $ugandaCategory = Category::where('slug', 'uganda-safaris')->first();
+        $kenyaCategory = Category::where('slug', 'kenya-safaris')->first();
         
         foreach($safaris as $safari){
-            if($safari->subCategory->categoryId == $ugandaCategory->id){
-                array_push($ugandaSafaris, $safari);
+            if($safari->subCategory->categoryId == $kenyaCategory->id){
+                array_push($kenyaSafaris, $safari);
             }
         }
-
-        $ugandaSafarisCount = count($ugandaSafaris);
+        
+        $ugandaSafarisCount = Safari::where('categoryId', 2)->count();
 
         return view('customer/allsafaris/uganda', compact('ugandaSafaris', 'ugandaSafarisCount'));
     }
 
     public function tanzaniaSafaris()
     {
-        $tanzaniaSafaris = [];
-        $safaris = Safari::with('subCategory')->get();
-        $tanzaniaCategory = Category::where('slug', 'tanzania-safaris')->first();
-        
-        foreach($safaris as $safari){
-            if($safari->subCategory->categoryId == $tanzaniaCategory->id){
-                array_push($tanzaniaSafaris, $safari);
-            }
-        }
-
-        $tanzaniaSafarisCount = count($tanzaniaSafaris);
+        $tanzaniaSafaris = Safari::where('categoryId', 3)->get();
+        $tanzaniaSafarisCount = Safari::where('categoryId', 3)->count();
 
         return view('customer/allsafaris/tanzania', compact('tanzaniaSafaris', 'tanzaniaSafarisCount'));
     }

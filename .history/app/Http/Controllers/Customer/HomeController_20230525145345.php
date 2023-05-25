@@ -120,24 +120,15 @@ class HomeController extends Controller
             }
         }
 
-        $ugandaSafarisCount = count($ugandaSafaris);
+        $ugandaSafarisCount = Safari::where('categoryId', 2)->count();
 
         return view('customer/allsafaris/uganda', compact('ugandaSafaris', 'ugandaSafarisCount'));
     }
 
     public function tanzaniaSafaris()
     {
-        $tanzaniaSafaris = [];
-        $safaris = Safari::with('subCategory')->get();
-        $tanzaniaCategory = Category::where('slug', 'tanzania-safaris')->first();
-        
-        foreach($safaris as $safari){
-            if($safari->subCategory->categoryId == $tanzaniaCategory->id){
-                array_push($tanzaniaSafaris, $safari);
-            }
-        }
-
-        $tanzaniaSafarisCount = count($tanzaniaSafaris);
+        $tanzaniaSafaris = Safari::where('categoryId', 3)->get();
+        $tanzaniaSafarisCount = Safari::where('categoryId', 3)->count();
 
         return view('customer/allsafaris/tanzania', compact('tanzaniaSafaris', 'tanzaniaSafarisCount'));
     }
