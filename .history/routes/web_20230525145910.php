@@ -48,7 +48,7 @@ Route::get('/uganda-safaris/', [HomeController::class, 'ugandaSafaris']);
 
 Route::get('/tanzania-safaris/', [HomeController::class, 'tanzaniaSafaris']);
 
-Route::get('/gallery/', [HomeController::class, 'gallery']);
+Route::get('/gallery/', Customer\HomeController@gallery');
 
 Route::get('/booking/{safari}', [HomeController::class, 'booking']);
 Route::post('booking.store', [HomeController::class, 'storeBooking'])->name('booking.store');
