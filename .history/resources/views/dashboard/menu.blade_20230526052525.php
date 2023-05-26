@@ -91,12 +91,12 @@
 
             <ul id="locations-sub-menu" class="sub-menu">
                 <li>
-                    <a href="{{ route('admin.locations.index') }}">
+                    <a href="{{ route('admin.location.index') }}">
                         All Locations
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('admin.locations.create') }}">
+                    <a href="{{ route('location.create') }}">
                         Add Location
                     </a>
                 </li>

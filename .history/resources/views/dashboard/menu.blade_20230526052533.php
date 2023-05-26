@@ -96,7 +96,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('admin.locations.create') }}">
+                    <a href="{{ route('admin.location.create') }}">
                         Add Location
                     </a>
                 </li>
