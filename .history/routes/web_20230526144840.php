@@ -251,10 +251,7 @@ Route::prefix('dashboard')->middleware(['auth', ])->group(function () {
 
 /**
  * 
- * Method for creating symlink in cpanel.
- *  Just run baseurl/symlink
- *  
- **/
+ *  */ Method for creating symlink in cpanel.
 
 Route::get('/symlink', function(){
     

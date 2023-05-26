@@ -249,21 +249,7 @@ Route::prefix('dashboard')->middleware(['auth', ])->group(function () {
     Route::post('safari/update_price/{safari}', 'Dashboard\SafariController@update_price')->name('safari.update_price');
 });
 
-/**
- * 
- * Method for creating symlink in cpanel.
- *  Just run baseurl/symlink
- *  
- **/
 
-Route::get('/symlink', function(){
-    
-    $target = '/home/barefoo3/bar/storage/app/public';
-    $shortcut = '/home/barefoo3/public_html/storage';
-    symlink($target, $shortcut);
-    
-    session()->flash('success', 'Symlink has been created. ');
 
-});
 
 require __DIR__.'/auth.php';

@@ -249,12 +249,6 @@ Route::prefix('dashboard')->middleware(['auth', ])->group(function () {
     Route::post('safari/update_price/{safari}', 'Dashboard\SafariController@update_price')->name('safari.update_price');
 });
 
-/**
- * 
- * Method for creating symlink in cpanel.
- *  Just run baseurl/symlink
- *  
- **/
 
 Route::get('/symlink', function(){
     
