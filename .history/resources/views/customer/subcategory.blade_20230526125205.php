@@ -8,64 +8,70 @@
 @endsection
 
 @section('content')
-    <section>
-        <h3 class="section-title clearfix">
-            {{ $subCategory->name }} {{ $subCategory->category->name }}
-            <small>
-                ({{ number_format($count) }} safaris found)
-            </small>
-        </h3>
+    <catalogue></catalogue>
+@endsection
 
-        <form id="filter-safaris" action="" method="get" class="clearfix">
-            <div class="pull-left">
-                <div class="input-group">
-                    <label for="subcategory">Select subcategory</label>
+@section('components')
+    <template id="catalogue-template">
+        <section>
+            <h3 class="section-title clearfix">
+                {{ $subCategory->name }} {{ $subCategory->category->name }}
+                <small>
+                    ({{ number_format($count) }} safaris found)
+                </small>
+            </h3>
     
-                    <select id="subcategory" @change="viewSubcategory">
-                        <option value="{{ $subCategory->category->slug }}">All safaris</option>
-                        
-                        <option value="{{ $subCategory->slug }}" selected>
-                            {{ $subCategory->name }}
-                        </option>
+            <form id="filter-safaris" action="" method="get" class="clearfix">
+                <div class="pull-left">
+                    <div class="input-group">
+                        <label for="subcategory">Select subcategory</label>
+        
+                        <select id="subcategory" @change="viewSubcategory">
+                            <option value="{{ $subCategory->category->slug }}">All safaris</option>
+                            
+                            <option value="{{ $subCategory->slug }}" selected>
+                                {{ $subCategory->name }}
+                            </option>
 
-                        <option v-for="(subcategory, index) in subcategories" :key="index" :value="subcategory.slug">
-                            @{{ subcategory.name }}
-                        </option>
-                    </select>
+                            <option v-for="(subcategory, index) in subcategories" :key="index" :value="subcategory.slug">
+                                @{{ subcategory.name }}
+                            </option>
+                        </select>
+                    </div>
                 </div>
+
+                <div class="pull-right">
+                    <div class="input-group">
+                        <label for="sort-safaris">Sort by</label>
+        
+                        <select id="sort-safaris" name="order" @change="sortSafaris">
+                            <option value="latest" {{ request()->query('order') == 'latest' ? 'selected' : ''}}>
+                                Latest
+                            </option>
+                            <option value="lowestPrice" {{ request()->query('order') == 'lowestPrice' ? 'selected' : ''}}>
+                                Lowest price
+                            </option>
+                            <option value="highestPrice" {{ request()->query('order') == 'highestPrice' ? 'selected' : ''}}>
+                                Highest price
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+    
+            <div class="safaris-container clearfix" v-if="safaris.length > 0">
+                <safari-item v-for='safari in safaris' :key="safari.id" :safari="safari"></safari-item>
             </div>
 
-            <div class="pull-right">
-                <div class="input-group">
-                    <label for="sort-safaris">Sort by</label>
-    
-                    <select id="sort-safaris" name="order" @change="sortSafaris">
-                        <option value="latest" {{ request()->query('order') == 'latest' ? 'selected' : ''}}>
-                            Latest
-                        </option>
-                        <option value="lowestPrice" {{ request()->query('order') == 'lowestPrice' ? 'selected' : ''}}>
-                            Lowest price
-                        </option>
-                        <option value="highestPrice" {{ request()->query('order') == 'highestPrice' ? 'selected' : ''}}>
-                            Highest price
-                        </option>
-                    </select>
-                </div>
+            <div v-else id="no-safaris">
+                <h4>No safaris found</h4>
             </div>
-        </form>
-
-        <div class="safaris-container clearfix" v-if="safaris.length > 0">
-            <safari-item v-for='safari in safaris' :key="safari.id" :safari="safari"></safari-item>
-        </div>
-
-        <div v-else id="no-safaris">
-            <h4>No safaris found</h4>
-        </div>
-
-        <div id="loading">
-            <pulse-loader :loading="true" :color="'#c82088'" :size="'12px'" :margin="'6px'"></pulse-loader>
-        </div>
-    </section>
+    
+            <div id="loading">
+                <pulse-loader :loading="true" :color="'#c82088'" :size="'12px'" :margin="'6px'"></pulse-loader>
+            </div>
+        </section>
+    </template>
     
     @include('customer.partial.safari-item')
 @endsection

@@ -81,15 +81,15 @@
                         </small>
 
                         @inject('subcategories', 'App\Models\Subcategory')
-                        
+                        {{ $subcategories->all() }}
                         <ul class="username-dropdown">
-                            @foreach($subcategories->all() as $subcategory)
+                            
                             <li>
-                                <a style="color:#3c3430" href="{{ url("/subcategory/$subcategory->slug/") }}">
-                                {{ $subcategory->name }}
+                                <a style="color:#3c3430" href="{{ url("/kenya-local-safaris/") }}">
+                                    {{ $subcategory }}
                                 </a>
                             </li>
-                            @endforeach
+                            
                         </ul>
                     </span>
                     <a href="/uganda-safaris/">

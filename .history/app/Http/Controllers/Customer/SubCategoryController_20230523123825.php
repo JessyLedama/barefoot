@@ -4,8 +4,7 @@ namespace App\Http\Controllers\Customer;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\SubCategory;
-use App\Models\Safari;
+use App\SubCategory;
 
 class SubCategoryController extends Controller
 {
@@ -22,9 +21,7 @@ class SubCategoryController extends Controller
     {
         $subCategory = SubCategory::whereSlug($slug)->first();
 
-        $safaris = Safari::with('subCategory')->where('subcategoryId', $slug)->paginate();
-
-        // $safaris = $this->orderSafaris($subCategory->safaris(), $request->query('order'));
+        $safaris = $this->orderSafaris($subCategory->safaris(), $request->query('order'));
 
         // $safaris = $this->filterByMaxPrice(
             
@@ -39,13 +36,13 @@ class SubCategoryController extends Controller
 
         // if (!$request->ajax()) $count = $safaris->count();
         
-        // $safaris = $safaris->paginate(20)->appends([
+        $safaris = $safaris->paginate(20)->appends([
 
-        //     'Price' => $request->query('Price'),
-        //     'minPrice' => $request->query('minPrice'),
-        //     'maxPrice' => $request->query('maxPrice'),
-        //     'order' => $request->query('order')
-        // ]);
+            'Price' => $request->query('Price'),
+            'minPrice' => $request->query('minPrice'),
+            'maxPrice' => $request->query('maxPrice'),
+            'order' => $request->query('order')
+        ]);
 
         // if ($request->ajax()) return $safaris->items();
 

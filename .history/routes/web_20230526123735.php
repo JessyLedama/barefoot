@@ -15,7 +15,6 @@ use App\Http\Controllers\Customer\HomeController;
 use App\Http\Controllers\Customer\TouristLocationsController;
 use App\Http\Controllers\Dashboard\TouristLocationsController as AdminTourist;
 use App\Http\Controllers\Customer\AccountController;
-use App\Http\Controllers\Customer\SubCategoryController as CustomerSubcategory;
 
 /*
 |--------------------------------------------------------------------------
@@ -100,7 +99,7 @@ Route::get('search', 'Customer\SearchController@search')->name('search');
 
 Route::get('category/{slug}', 'Customer\CategoryController@show')->name('category.page');
 
-Route::get('subcategory/{slug}', [CustomerSubcategory::class, 'show'])->name('subcategory.page');
+Route::get('subcategory/{slug}', 'Customer\SubCategoryController@show')->name('subcategory.page');
 
 Route::view('cart', 'customer.cart')->name('cart.page');
 
@@ -115,7 +114,7 @@ Route::resource('safari', 'Customer\SafariController')->only(['index', 'store', 
     'show' => 'customer.safari.show' 
 ]);
 
-// customer safari
+
 Route::prefix('safari')->group(function () {
 
     Route::post('like', 'Customer\SafariController@like')->name('safari.like');
@@ -226,6 +225,8 @@ Route::prefix('dashboard')->middleware(['auth', ])->group(function () {
     });
 
     Route::view('menu', 'dashboard.mobile-menu')->name('dashboard.menu');
+    
+    
 
     Route::get('account', [AccountController::class, 'edit'])->name('account.edit');
 

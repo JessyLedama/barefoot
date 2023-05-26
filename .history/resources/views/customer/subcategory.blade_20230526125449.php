@@ -67,6 +67,7 @@
         </div>
     </section>
     
+    
     @include('customer.partial.safari-item')
 @endsection
 

@@ -39,13 +39,13 @@ class SubCategoryController extends Controller
 
         // if (!$request->ajax()) $count = $safaris->count();
         
-        // $safaris = $safaris->paginate(20)->appends([
+        $safaris = $safaris->paginate(20)->appends([
 
-        //     'Price' => $request->query('Price'),
-        //     'minPrice' => $request->query('minPrice'),
-        //     'maxPrice' => $request->query('maxPrice'),
-        //     'order' => $request->query('order')
-        // ]);
+            'Price' => $request->query('Price'),
+            'minPrice' => $request->query('minPrice'),
+            'maxPrice' => $request->query('maxPrice'),
+            'order' => $request->query('order')
+        ]);
 
         // if ($request->ajax()) return $safaris->items();
 

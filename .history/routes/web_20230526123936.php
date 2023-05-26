@@ -15,7 +15,6 @@ use App\Http\Controllers\Customer\HomeController;
 use App\Http\Controllers\Customer\TouristLocationsController;
 use App\Http\Controllers\Dashboard\TouristLocationsController as AdminTourist;
 use App\Http\Controllers\Customer\AccountController;
-use App\Http\Controllers\Customer\SubCategoryController as CustomerSubcategory;
 
 /*
 |--------------------------------------------------------------------------
@@ -100,7 +99,7 @@ Route::get('search', 'Customer\SearchController@search')->name('search');
 
 Route::get('category/{slug}', 'Customer\CategoryController@show')->name('category.page');
 
-Route::get('subcategory/{slug}', [CustomerSubcategory::class, 'show'])->name('subcategory.page');
+Route::get('subcategory/{slug}', [SubCategoryController::class, @show')->name('subcategory.page');
 
 Route::view('cart', 'customer.cart')->name('cart.page');
 

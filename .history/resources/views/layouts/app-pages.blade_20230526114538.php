@@ -80,16 +80,17 @@
                             <i class="ti-angle-down"></i>
                         </small>
 
-                        @inject('subcategories', 'App\Models\Subcategory')
+                        <?php
+
                         
+                        ?>
                         <ul class="username-dropdown">
-                            @foreach($subcategories->all() as $subcategory)
                             <li>
-                                <a style="color:#3c3430" href="{{ url("/subcategory/$subcategory->slug/") }}">
-                                {{ $subcategory->name }}
+                                <a style="color:#3c3430" href="{{ url("/kenya-local-safaris/") }}">
+                                    Local Safaris
                                 </a>
                             </li>
-                            @endforeach
+                            <li><a style="color:#3c3430" href="{{ url("/kenya-multiple-day-safaris/") }}">Multiple Day Safaris</a></li>
                         </ul>
                     </span>
                     <a href="/uganda-safaris/">
