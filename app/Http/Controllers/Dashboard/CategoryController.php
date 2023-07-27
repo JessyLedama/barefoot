@@ -41,11 +41,13 @@ class CategoryController extends Controller
      */
     public function store(StoreCategoryRequest $request)
     {
-        $category = Category::create($request->all());
+        // get slug
+        $slug = strtolower(str_replace(' ', '-', $request->name));
+        $category = Category::create($request->except(['slug']) + ['slug' => $slug]);
 
         $category->seo()->create([
             
-            'title' => $request->seo_title ?? '',
+            'title' => $slug ?? '',
             'keywords' => $request->seo_keywords ?? '',
             'description' => $request->seo_description ?? ''
         ]);

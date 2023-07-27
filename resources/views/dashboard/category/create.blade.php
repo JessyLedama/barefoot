@@ -37,18 +37,6 @@
                         @enderror
                    </div>
 
-                   <div class="pull-right">
-                        <h4>Slug</h4>
-
-                        <input type="text" placeholder="Slug" value="{{ old('slug', '') }}" name="slug" required>
-
-                        @error('slug')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                   </div>
-
                 </div>
 
                 <h4>Description</h4>

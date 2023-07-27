@@ -42,13 +42,16 @@ class SubCategoryController extends Controller
      * @param  \App\Http\Requests\StoreSubCategoryRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreSubCategoryRequest $request)
+    public function store(Request $request)
     {
-        $subCategory = SubCategory::create($request->all());
+        // get slug
+        $slug = strtolower(str_replace(' ', '-', $request->name));
+
+        $subCategory = SubCategory::create($request->except(['slug']) + ['slug' => $slug]);
 
         $subCategory->seo()->create([
 
-            'title' => $request->seo_title ?? '',
+            'title' => $slug ?? '',
             'keywords' => $request->seo_keywords ?? '',
             'description' => $request->seo_description ?? '',
             'seoable_id' => $subCategory->id,
