@@ -63,6 +63,7 @@ class SafariController extends Controller
         $slug = strtolower(str_replace(' ', '-', $request->name));
 
         // Store safari data.
+<<<<<<< HEAD
         $safari = Safari::create($request->except([
             'cover', 
             'gallery', 
@@ -76,11 +77,15 @@ class SafariController extends Controller
             'dinner', 
             'accomodation'
             ]) + [
+=======
+        $safari = Safari::create($request->except(['cover', 'gallery', 'featured', 'slug']) + [
+>>>>>>> 2107d1dac4dc6ae133eb91018a87e3945d5fca50
 
             'cover' => $cover,
             'gallery' => implode('|', $gallery),
             'featured' => $request->featured ? 1 : 0,
             'slug' => $slug,
+<<<<<<< HEAD
             'entry_fee' => $request->entry_fee ? 1 : 0,
             'transport' => $request->transport ? 1 : 0,
             'tour_guide' => $request->tour_guide ? 1 : 0,
@@ -88,6 +93,8 @@ class SafariController extends Controller
             'lunch' => $request->lunch ? 1 : 0,
             'dinner' => $request->dinner ? 1 : 0,
             'accomodation' => $request->accomodation ? 1 : 0,
+=======
+>>>>>>> 2107d1dac4dc6ae133eb91018a87e3945d5fca50
         ]);
 
         // store seo data
