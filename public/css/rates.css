@@ -1,0 +1,113 @@
+#kenya-local-rates{
+    margin-left: 130px;
+}
+
+.rates-content-title {
+    text-align: center;
+    font-weight: 500;
+    color: #3c3430;
+    font-size: 35px;
+    margin-top: 100px !important;
+    margin-bottom: 20px;
+    padding-top: 35px;
+}
+
+.rates{
+    text-align: left;
+    font-weight: 600;
+}
+
+.rates-title {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 113px !important;
+    margin-bottom: 2px;
+    font-weight: 600;
+    font-size: 16px;
+    color: #3c3430;
+    padding-top: 13px;
+    margin-bottom: 0px;
+    white-space: initial;
+    overflow: hidden;
+    margin-left: 72px;
+    margin-top: 5px;
+    display: inline-block;
+    width: 56%;
+}
+
+
+.rates-price {
+    color: #3c3430 !important;
+    font-size: 18px !important;
+    font-weight: 600;
+    margin-left: 8px;
+    white-space: initial;
+    overflow: hidden;
+    margin-bottom: -7px;
+    margin-right: -10px;
+    display: inline-block;
+}
+
+.rates-link {
+    margin-left: 0px !important;
+}
+
+.rates-title:hover {
+    color: #f2951b;
+}
+
+.extra-content{
+    margin: 0 0 0 130px !important;
+}
+
+.extra-list{
+    margin-top: 30px !important;
+}
+
+.row{
+    width: 100% !important;
+}
+
+
+@media(max-width: 767px)
+{
+    .rates{
+        margin-left: -120px;
+        font-size: 12px !important;
+    }
+
+    .rates-title{
+        font-size: 12px !important;
+        margin-bottom: -4px;
+    }
+    .extra-content{
+        margin: 0 0 0 -115px !important;
+        font-size: 14px;
+    }
+
+    .extras{
+        font-size: 30px;
+    }
+
+    .rates-content-title {
+        text-align: center;
+        font-weight: 500;
+        color: #3c3430;
+        font-size: 20px;
+        margin-top: 100px !important;
+        margin-bottom: 20px;
+        padding-top: 0px;
+    }
+
+    .rates-container {
+        
+        white-space: nowrap;
+        max-width: 100%;
+        margin-left: -95px;
+    }
+}
+
+
+
+
+

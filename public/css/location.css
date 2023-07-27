@@ -1,0 +1,98 @@
+.location-card {
+    font-size: 12px;
+    font-weight: 500;
+    color: #3c3430;
+    margin:0;
+    margin-left: 10px;
+    white-space: initial;
+    overflow: hidden;
+}
+
+.location-view{
+    color: #fff;
+    margin-left: 4px;
+    border: 1px solid #fff;
+    padding: 2px 7px;
+    border-radius: 6px;
+    font-weight: 400;
+    font-size: 13px;
+    margin-top: -74px !important;
+}
+
+.locations-background {
+    background-image: url("/images/giraffes-crossing.jpg");
+    height: 500px;
+    background-position: fixed;
+    background-size: cover;
+    position: relative;
+    width: 108%;
+    margin-left: -48px;
+}
+
+.location-cover {
+    width: 97%;
+    height: 330px;
+    border-radius: 6px;
+    margin-left: 10px;
+    margin-bottom: 33px;
+}
+
+.location-content-title {
+    text-align: center;
+    font-weight: 500;
+    color: #3c3430;
+    font-size: 35px;
+    margin-top: 15px;
+}
+
+.location-content-subtitle, a {
+    text-align: center;
+    color: #3c3430;
+    font-size: 16px;
+}
+
+.location-title{
+    font-size: 23px;
+}
+
+.lo-cover{
+    width: 114%;
+    height: 500px;
+    margin-left: -166px;
+    margin-top: 76px;
+}
+
+.lo-title{
+    font-size: 23px;
+    margin-top: 10%;
+}
+
+.lo-container{
+    margin-left: 160px;
+}
+
+#campaign-intro{
+    margin-bottom: 8%;
+}
+
+@media(max-width: 767px){
+    .location{
+        margin-left: 73px;
+    }
+    .location-cover {
+        width: 261% !important;
+        height: 307px;
+        border-radius: 6px;
+        margin-left: 79px;
+    }
+    .lo-cover {
+        width: 174%;
+        height: 375px;
+        margin-left: -160px;
+        margin-top: 76px;
+    }
+    #campaign-intro {
+        margin-bottom: 8%;
+        margin-left: -115px;
+    }
+}

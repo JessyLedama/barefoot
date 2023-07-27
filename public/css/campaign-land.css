@@ -1,0 +1,369 @@
+.campaign {
+    margin-top: 25px;
+    margin-right: 15px;
+    width: calc(33.3333% - 32px);
+    border: 1px solid #eee;
+    border-radius: 6px;
+    height: 535px;
+
+}
+
+.campaign:hover {
+    border:1px solid #f2951b;
+}
+.campaign-cover {
+    width: 100%;
+    height: 200px;
+    border-radius: 6px;
+    
+}
+
+.campaign-title {
+    margin: 0;
+    margin-bottom: 2px;
+    font-weight: 600;
+    font-size: 16px;
+    color: #3c3430;
+    padding-top: 10px;
+    margin-bottom: 0px;
+    white-space: initial;
+    overflow: hidden;
+    margin-left: 10px;
+}
+
+.location-cover {
+    width: 97%;
+    height: 330px;
+    border-radius: 6px;
+    margin-left: 10px;
+    box-shadow: 1px 2px 5px #2a2a2a;
+}
+
+.location-title{
+    position: absolute;
+    left: 125px;
+    top: 241px;
+    color: white;
+    font-weight: 700;
+    font-size: 30px;
+}
+.card-icon {
+    font-size: 12px;
+    color: #f2951b;
+}
+.icon-clock {
+    font-size: 12px;
+    color: #f2951b;
+    margin-right: 5px;
+}
+.icon-location {
+    font-size: 12px;
+    color: #f2951b;
+    margin-right: 8px;
+    margin-left: 2px;
+}
+
+.review {
+    font-size: 12px;
+    color: #3c3430;
+}
+.day-location {
+    font-size: 12px;
+    color: #3c3430;
+    margin:0;
+}
+.day-card {
+    font-size: 12px;
+    font-weight: 500;
+    color: #3c3430;
+    margin:0;
+    margin-left: 10px;
+    white-space: initial;
+    overflow: hidden;
+}
+.location-card {
+    font-size: 12px;
+    font-weight: 500;
+    color: #3c3430;
+    margin:0;
+    margin-left: 10px;
+    white-space: initial;
+    overflow: hidden;
+}
+
+.location-view{
+    color: #fff;
+    margin-left: 155px;
+    border: 1px solid #fff;
+    padding: 4px 0px 4px 0px !important;
+    border-radius: 6px;
+    font-weight: 400;
+    font-size: 13px;
+    margin-top: -40px;
+    position: relative;
+    width: 53px;
+}
+.price-from{
+    color:#3c3430; 
+    font-size:12px; 
+    margin-top:25px;
+    margin-bottom: -3px;
+    margin-right: -8px !important;
+    white-space: initial;
+    overflow: hidden;
+    font-weight: 600;
+    margin-left: 10px;
+}
+.per-person{
+    color:#f2951b !important; 
+    font-size:12px; 
+    margin-top:15px;
+    margin-bottom: -3px;
+    margin-right: 20px !important;
+    white-space: initial;
+    overflow: hidden;
+    font-weight: 600;
+    margin-left: 9px;
+}
+.price-card{
+    color:#f2951b !important; 
+    font-size:18px !important; 
+    font-weight:600;
+    margin-left:8px;
+    white-space: initial;
+    overflow: hidden;
+    margin-bottom: -7px;
+    margin-right: -10px ;
+    
+}
+.campaign-subtitle {
+    color: #013644;
+    margin-top: -2px;
+    display: block;
+    font-size: 15px;
+}
+.campaign > .clearfix:first-of-type h6 {
+    margin: 10px 20px 10px -10px;
+    color: #4e9e0a;
+}
+.campaign-description {
+    margin: 15px 0 15px 10px;
+    font-size: 12px;
+    color: #3c3430;
+    font-weight:400;
+    white-space: initial;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+}
+
+.campaign-description :hover{
+    font-weight:400;
+}
+.campaign > h6.clearfix {
+    margin: 10px 0;
+    color: #013644;
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: 5px !important;
+}
+.campaign > h6.clearfix > span:first-child {
+    margin-right: 16px;
+}
+.campaign-funds-progress {
+    width: 80%;
+    position: relative
+}
+.campaign-funds-progress.left:before, .campaign-funds-progress.left:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: .5rem;
+    margin: calc(7px - 0.25rem) 0;
+}
+.campaign-funds-progress.left:before {
+    left: 0;
+    width: 80%;
+    background: #4e9e0a;
+    border-radius: 40px;
+}
+.campaign-funds-progress.left:after {
+    width: calc(20% + 10px);
+    background: #eee;
+    border-radius: 40px;
+    right: 10px;
+    z-index: -1;
+}
+.campaign-percentage.right {
+    font-size: 14px;
+    line-height: 1;
+    color: #013644;
+    font-weight: 600;
+}
+.campaign-funds-stats {
+    color: #013644;
+    margin: 6px 16px 15px;
+}
+.campaign-funds-stats strong {
+    font-size: 17px;
+    font-weight: 600;
+}
+.campaign-funds-stats small {
+    font-weight: 400;
+    font-size: 16px;
+}
+.campaign .success-amount-raised, .campaign .success-investors {
+    color: #013644;
+    font-weight: 600;
+    margin: 10px 16px;
+}
+
+.campaign-parent {
+    position: relative;
+}
+
+.campaign-view{
+    color: #fff;
+    margin-left: 96px;
+    border: 1px solid #f2951b;
+    padding: 4px 11px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 16px;
+    background: #f2951b;
+    margin-top:20px;
+    width: 40%;
+    text-align: center;
+}
+.campaign-view a{
+    color: #fff;
+    margin-left: 96px;
+    border: 1px solid #f2951b;
+    padding: 4px 11px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 16px;
+    background: #afa89e;
+    margin-top:20px;
+    width: 40%;
+    text-align: center;
+}
+
+.pr {
+    display: none;
+}
+
+.for-mobile{
+    display: none;
+}
+
+html, body{
+    position: relative;
+}
+
+@media (max-width: 767px) {
+
+    .campaign {
+        margin-top: 10px;
+        margin-right: 15px;
+        width: 260px;
+        border: 1px solid #eee;
+        border-radius: 6px;
+        height: 559px;
+    }
+
+    .campaign-safaris {
+        margin-top:26px;
+        margin-right:15px;
+        width:100%;
+        border: 1px solid #eee;
+        border-radius: 6px;
+        height: 559px;
+        margin-left: 19px;
+    }
+
+    .price-card {
+        color: #f2951b !important;
+        font-size: 18px !important;
+        font-weight: 600;
+        white-space: initial;
+        overflow: hidden;
+        padding-left: 26px !important;
+    }
+
+    .price-from {
+        color: #3c3430;
+        font-size: 12px;
+        margin-top: 15px;
+        margin-bottom: -14px;
+        margin-right: 2px !important;
+        white-space: initial;
+        overflow: hidden;
+        margin-left: 104px;
+    }
+
+    .campaign-view {
+        color: #fff;
+        margin-left: 89px;
+        border: 1px solid #f2951b;
+        padding: 2px 16px;
+        border-radius: 6px;
+        font-weight: 400;
+        font-size: 13px;
+        margin-top: 25px;
+    }
+
+    .for-mobile{
+        display: block;
+    }
+
+    .location-title{
+        position: absolute;
+        left: 112px;
+        top: 239px;
+        color: white;
+        font-weight: 700;
+        font-size: 30px;
+    }
+
+    .location-view{
+        color: #fff;
+        margin-left: 101px;
+        border: 1px solid #fff;
+        padding: 2px 7px;
+        border-radius: 6px;
+        font-weight: 400;
+        font-size: 13px;
+        margin-top: -40px;
+        margin-bottom: 30px;
+    }
+    .location-title-page{
+        position: absolute;
+        left: 100px;
+        top: 181px;
+        color: white;
+        font-weight: 700;
+        font-size: 24px;
+        width: 100%;
+    }
+
+    .location-view-page{
+        color: #fff;
+        margin-left: 121px;
+        border: 1px solid #fff;
+        padding: 2px 7px;
+        border-radius: 6px;
+        font-weight: 400;
+        font-size: 13px;
+        margin-top: -114px;
+        margin-bottom: 30px;
+    }
+
+    .col-gallery{
+        margin-left: -10px !important;
+        max-width: 100% !important;
+    }
+
+}
