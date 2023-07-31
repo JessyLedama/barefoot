@@ -117,7 +117,7 @@ class HomeController extends Controller
         if(!empty($safaris)){
 
             foreach($safaris as $safari){
-                if($safari->subCategory->categoryId == $ugandaCategory->id){
+                if($safari->categoryId == $ugandaCategory->id){
                     array_push($ugandaSafaris, $safari);
                 }
             }
@@ -137,7 +137,7 @@ class HomeController extends Controller
         if(!empty($safaris)){
 
             foreach($safaris as $safari){
-                if($safari->subCategory->categoryId == $tanzaniaCategory->id){
+                if($safari->categoryId == $tanzaniaCategory->id){
                     array_push($tanzaniaSafaris, $safari);
                 }
             }
