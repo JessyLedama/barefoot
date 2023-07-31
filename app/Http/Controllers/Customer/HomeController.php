@@ -30,7 +30,9 @@ class HomeController extends Controller
  
         $featuredSafaris = Safari::whereFeatured(true)->inRandomOrder()->take(3)->get();
 
-        // $safaris = Safari::with('subCategory')->all();
+        $ugandaCategory = Category::where('slug', 'uganda-safaris')->first();
+
+        $tanzaniaCategory = Category::where('slug', 'tanzania-safaris')->first();
 
         $kenyaSafaris = Safari::where('subcategoryId', 1)->take(3)->get();
 
@@ -38,9 +40,9 @@ class HomeController extends Controller
 
         $kenyaMultipleDaySafaris = Safari::where(['subcategoryId' => 1, 'subcategoryId' => 2])->take(3)->get();
 
-        $ugandaSafaris = Safari::where('subcategoryId', 2)->take(3)->get();
+        $ugandaSafaris = Safari::where('categoryId', $ugandaCategory->id)->take(3)->get();
 
-        $tanzaniaSafaris = Safari::where('subcategoryId', 3)->take(3)->get();
+        $tanzaniaSafaris = Safari::where('categoryId', $tanzaniaCategory->id)->take(3)->get();
 
         $locations = TouristLocation::take(3)->get();
 

@@ -80,7 +80,7 @@
                             <i class="ti-angle-down"></i>
                         </small>
 
-                        @inject('subcategories', 'App\Models\Subcategory')
+                        @inject('subcategories', 'App\Models\SubCategory')
                          
                         <ul class="username-dropdown">
                             @foreach($subcategories->all() as $subcategory)

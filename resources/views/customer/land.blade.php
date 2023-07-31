@@ -9,6 +9,8 @@
 <!-- 
     <home></home> -->
 
+
+<!-- Slideshow -->
 <section>
     <div id="home-slideshow">
         <div class="home-featured">
@@ -254,7 +256,7 @@
                 <img src="{{ asset('/storage/'.$safari->cover) }}" alt="campaign title" class="campaign-cover"/>
 
                 <h6 class="campaign-title">
-                    {{ ucwords($safari->name) }}
+                    {{ ucwords($safari->name) }} 
                 </h6>
                 <!-- <div class="clearfix">
                     <i class="card-icon fa fa-star"></i>
