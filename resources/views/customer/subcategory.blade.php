@@ -8,9 +8,9 @@
 @endsection
 
 @section('content')
-    <section>
+    <section class="container data-container">
         <h3 class="section-title clearfix">
-            {{ $subCategory->name }} {{ $subCategory->category->name }}
+            {{ $subCategory->name }} in {{ $subCategory->category->name }}
             <small>
                 ({{ number_format($count) }} safaris found)
             </small>
@@ -23,14 +23,14 @@
     
                     <select id="subcategory" @change="viewSubcategory">
                         <option value="{{ $subCategory->category->slug }}">All safaris</option>
-                        
-                        <option value="{{ $subCategory->slug }}" selected>
-                            {{ $subCategory->name }}
+                        @foreach($subcategories as $sub)
+                        <option value="{{ $sub->slug }}" selected>
+                            {{ $sub->name }}
                         </option>
-
-                        <option v-for="(subcategory, index) in subcategories" :key="index" :value="subcategory.slug">
+                        @endforeach
+                        <!-- <option v-for="(subcategory, index) in subcategories" :key="index" :value="subcategory.slug">
                             @{{ subcategory.name }}
-                        </option>
+                        </option> -->
                     </select>
                 </div>
             </div>
@@ -54,13 +54,77 @@
             </div>
         </form>
 
-        <div class="safaris-container clearfix" v-if="safaris.length > 0">
-            <safari-item v-for='safari in safaris' :key="safari.id" :safari="safari"></safari-item>
-        </div>
+        <section >
 
-        <div v-else id="no-safaris">
-            <h4>No safaris found</h4>
-        </div>
+            <h1 class="section-content-title">
+                {{ $subCategory->name }}
+            </h1>
+            @if(!empty($safaris))
+            <!-- <div class="safaris-container clearfix" v-if="safaris.length > 0">
+                
+                <safari-item v-for='safari in safaris' :key="safari.id" :safari="safari"></safari-item>
+            </div> -->
+
+                <div class="clearfix campaign-container">
+                    @foreach ($safaris as $safari)
+                        <a class="card-link" href="{{ url("/safaris/{$safari->id}") }}"> 
+                            <div class="left campaign">
+                                
+                                <img src="{{ asset('/storage/'.$safari->cover) }}" alt="campaign title" class="campaign-cover"/>
+
+                                <h6 class="campaign-title">
+                                    {{ ucwords($safari->name) }}
+                                </h6>
+                                <!-- <div class="clearfix">
+                                    <i class="card-icon fa fa-star"></i>
+                                    <i class="card-icon fa fa-star"></i>
+                                    <i class="card-icon fa fa-star"></i>
+                                    <i class="card-icon fa fa-star"></i>
+                                    <i class="card-icon fa fa-star"></i>
+
+                                    <span class="review">5.0</span>
+                                    <span class="review">(5)</span>
+                                </div> -->
+                                @php 
+                                    $safarii = html_entity_decode($safari->shortDescription);
+                                    $safarii = strip_tags($safarii); 
+
+                                    $it = explode('|', $safari->itinerary);   
+                                @endphp
+
+                                <p class="campaign-description">
+                                    {{ ucwords($safarii) }}
+                                </p>
+                                <p class="day-card">
+                                <!-- <i class="icon-clock fa fa-clock-o"></i>
+                                    7 Days 
+                                </p> -->
+                                <p class="location-card">
+                                <i class="icon-location fa fa-map-marker"></i>
+                                    {{ ucwords($safari->location) }}
+                                </p>
+                            
+                                    <span class="price-from pr{{$safari->price_from}}">from</span> <br class="for-mobile"/>
+                                    <span class="price-card pr{{$safari->price_from}}">Ksh{{ ucwords($safari->price_from) }}</span>
+                                    <span class="per-person pr{{$safari->price_from}}">per person</span> 
+                                    <br class=""/>
+                                    <span class="campaign-view">View</span>
+                            </div>  
+                        </a>
+                    @endforeach
+
+            
+                </div>
+
+            @else
+                <div v-else id="no-safaris">
+                    <h4>No safaris found</h4>
+                </div>
+            @endif
+        </section>
+        
+
+        
 
         <div id="loading">
             <pulse-loader :loading="true" :color="'#c82088'" :size="'12px'" :margin="'6px'"></pulse-loader>

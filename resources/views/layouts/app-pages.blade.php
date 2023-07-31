@@ -81,7 +81,7 @@
                         </small>
 
                         @inject('subcategories', 'App\Models\Subcategory')
-                        
+                         
                         <ul class="username-dropdown">
                             @foreach($subcategories->all() as $subcategory)
                             <li>

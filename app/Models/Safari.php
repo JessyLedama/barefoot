@@ -62,7 +62,7 @@ class Safari extends Model
 
     public function getUrlAttribute()
     {
-        return route('product.page', $this->slug ?? Str::slug($this->name));
+        return route('subcategory.page', $this->slug ?? Str::slug($this->name));
     }
 
     public function getImagesAttribute()

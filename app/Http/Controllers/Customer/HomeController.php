@@ -111,7 +111,7 @@ class HomeController extends Controller
     public function ugandaSafaris()
     {
         $ugandaSafaris = [];
-        $safaris = Safari::with('subCategory')->get();
+        $safaris = Safari::with('subCategory')->with('category')->get();
         $ugandaCategory = Category::where('slug', 'uganda-safaris')->first();
         
         if(!empty($safaris)){

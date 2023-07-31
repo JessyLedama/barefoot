@@ -22,16 +22,14 @@ class SubCategoryController extends Controller
     {
         $subCategory = SubCategory::whereSlug($slug)->first();
 
-        $safaris = Safari::with('subCategory')->where('subcategoryId', $slug)->paginate();
+        $safaris = Safari::with('subCategory')->where('subcategoryId', $subCategory->id)->paginate();
 
-        $subCategory->load(['category.subCategories' => function ($query) use($subCategory) {
-
-            $query->where('subcategories.slug', '!=', $subCategory->slug);
-        }]);
+        // get all subcategories in this category
+        $subcategories = SubCategory::where('categoryId', $subCategory->categoryId)->get();
         
         $count = $safaris->count();
 
-        return view('customer.subcategory', compact('subCategory', 'safaris', 'count'));
+        return view('customer.subcategory', compact('subCategory', 'safaris', 'count', 'subcategories'));
     }
 
     /**
