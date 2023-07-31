@@ -28,24 +28,32 @@ class HomeController extends Controller
             
         });
  
+        // featured safaris
         $featuredSafaris = Safari::whereFeatured(true)->inRandomOrder()->take(3)->get();
 
+        // country categories
         $ugandaCategory = Category::where('slug', 'uganda-safaris')->first();
 
         $tanzaniaCategory = Category::where('slug', 'tanzania-safaris')->first();
 
-        $kenyaSafaris = Safari::where('subcategoryId', 1)->take(3)->get();
+        // subcategories
+        $localSubcategory = SubCategory::where('slug', 'day-trip-safari')->first();
 
-        $kenyaLocalSafaris = Safari::where(['subcategoryId' => 1, 'subcategoryId' => 1])->take(6)->get();
+        $multiSubcategory = SubCategory::where('slug', 'multi-day-safaris')->first();
 
-        $kenyaMultipleDaySafaris = Safari::where(['subcategoryId' => 1, 'subcategoryId' => 2])->take(3)->get();
+        // safaris
+        $kenyaLocalSafaris = Safari::where('subcategoryId', $localSubcategory)->take(6)->get();
+
+        $kenyaMultipleDaySafaris = Safari::where('subcategoryId', $multiSubcategory)->take(3)->get();
 
         $ugandaSafaris = Safari::where('categoryId', $ugandaCategory->id)->take(3)->get();
 
         $tanzaniaSafaris = Safari::where('categoryId', $tanzaniaCategory->id)->take(3)->get();
 
+        // locations
         $locations = TouristLocation::take(3)->get();
 
+        // gallery
         $gallery = Safari::take(6)->get();
 
         return view('customer.land', compact('categories', 'featuredSafaris', 'kenyaSafaris','ugandaSafaris', 'tanzaniaSafaris', 'kenyaLocalSafaris', 'kenyaMultipleDaySafaris', 'locations','gallery'));
