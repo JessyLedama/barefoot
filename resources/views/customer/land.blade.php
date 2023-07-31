@@ -63,6 +63,7 @@
         POPULAR SAFARIS
     </h1>
     
+    <!-- popular safaris -->
     <div class="clearfix campaign-container">
         @foreach ($featuredSafaris as $safari)
         <a class="card-link" href="{{ url("/safaris/{$safari->id}") }}"> 
@@ -84,7 +85,7 @@
                     <span class="review">(5)</span>
                 </div> -->
                 @php 
-                    $safarii = html_entity_decode($safari->shortDescription);
+                    $safarii = html_entity_decode($safari->description);
                     $safarii = strip_tags($safarii); 
 
                     $it = explode('|', $safari->itinerary);   
@@ -111,6 +112,8 @@
         </a>
         @endforeach
     </div>
+
+    <!-- Kenya Safaris photo -->
     <div class="photo-featured-1">
         <img src="images/leopard-sneaking.jpg" alt="" class="photo-featured-cover">
     </div>
@@ -122,10 +125,11 @@
     <h1 class="section-content-title">Kenya Local Safaris</h1>
     <div class="section-content-subtitle">
         <a href="{{ url("/kenya-local-safaris/") }}">
-            All Kenya Local Safaris
+            All Kenya Day-Trip Safaris
         </a>
     </div>
 
+    <!-- Kenya Day-Trip Safaris -->
     <div class="clearfix campaign-container">
         @foreach ($kenyaLocalSafaris as $safari)
         <a class="card-link" href="{{ url("/safaris/{$safari->id}") }}">
@@ -147,7 +151,7 @@
                     <span class="review">(5)</span>
                 </div> -->
                 @php 
-                    $safarii = html_entity_decode($safari->shortDescription);
+                    $safarii = html_entity_decode($safari->description);
                     $safarii = strip_tags($safarii);
                 @endphp
                 <p class="campaign-description">
@@ -170,6 +174,8 @@
         </a>
         @endforeach
     </div>
+
+    <!-- Multi-Day Safaris Title -->
     <h1 class="section-content-title">Kenya Multiple Day Safaris</h1>
     <div class="section-content-subtitle">
         <a href="{{ url("/kenya-multiple-day-safaris/") }}">
@@ -177,6 +183,7 @@
         </a>
     </div>
 
+    <!-- Kenya Multi Day Safaris -->
     <div class="clearfix campaign-container">
         @foreach ($kenyaMultipleDaySafaris as $safari)
         <a class="card-link" href="{{ url("/safaris/{$safari->id}") }}">
@@ -198,7 +205,7 @@
                     <span class="review">(5)</span>
                 </div> -->
                 @php 
-                    $safarii = html_entity_decode($safari->shortDescription);
+                    $safarii = html_entity_decode($safari->description);
                     $safarii = strip_tags($safarii);
                 @endphp
                 <p class="campaign-description">
@@ -221,7 +228,8 @@
         </a>
         @endforeach
     </div>
-    
+
+    <!-- Uganda safaris title -->
     <div class="photo-featured-2">
     <img src="images/bonobos-uganda.jpg" alt="" class="photo-featured-cover">
     </div>
@@ -237,6 +245,7 @@
         </a>
     </div>
 
+    <!-- Uganda Safaris -->
     <div class="clearfix campaign-container">
         @foreach ($ugandaSafaris as $safari)
         <a class="card-link" href="{{ url("/safaris/{$safari->id}") }}">
@@ -258,7 +267,7 @@
                     <span class="review">(5)</span>
                 </div> -->
                 @php 
-                    $safarii = html_entity_decode($safari->shortDescription);
+                    $safarii = html_entity_decode($safari->description);
                     $safarii = strip_tags($safarii);
                 @endphp
                 <p class="campaign-description">
@@ -282,6 +291,7 @@
         @endforeach
     </div>
 
+    <!-- Tanzania safaris title -->
     <div class="photo-featured-3">
     <img src="images/giraffes-crossing.jpg" alt="" class="photo-featured-cover">
     </div>
@@ -290,6 +300,7 @@
         <h4 class="photo-caption-2"> Experience Tanzania's natural splendor form the great Wildbeeste Migration in Serengeti to hiking the tallest mountain in Africa, Mt Kilimanjaro  </h4>
     </div>
 
+    
     <h1 class="section-content-title">Tanzania Safaris</h1>
     <div class="section-content-subtitle">
         <a href="{{ url("/gallery/") }}">
@@ -297,6 +308,7 @@
         </a>
     </div>
 
+    <!-- Tanzania safaris -->
     <div class="clearfix campaign-container">
         @foreach ($tanzaniaSafaris as $safari)
         <a class="card-link" href="{{ url("/safaris/{$safari->id}") }}">
@@ -318,7 +330,7 @@
                     <span class="review">(5)</span>
                 </div> -->
                 @php 
-                    $safarii = html_entity_decode($safari->shortDescription);
+                    $safarii = html_entity_decode($safari->description);
                     $safarii = strip_tags($safarii);
                 @endphp
                 <p class="campaign-description">
@@ -342,6 +354,7 @@
         @endforeach
     </div>
 
+    <!-- Top tourist locations -->
     <div class="locations-background"> 
         <div class="row location-header">
             <h1 class="location-content-title">Top Tourist Attractions</h1>
@@ -370,6 +383,7 @@
         </div>
     </div>
     
+    <!-- Gallery -->
     <h1 class="section-content-title">Gallery</h1>
     <div class="section-content-subtitle">
         <a href="{{ url("/gallery/") }}">
@@ -386,7 +400,6 @@
         </a>
         @endforeach
     </div>
-    <p id="isPrice">price is</p>
 </section>
 @endsection
 
