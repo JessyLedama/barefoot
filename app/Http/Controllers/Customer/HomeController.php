@@ -46,17 +46,34 @@ class HomeController extends Controller
 
         $kenyaMultipleDaySafaris = Safari::where('subcategoryId', $multiSubcategory)->take(3)->get();
 
-        $ugandaSafaris = Safari::where('categoryId', $ugandaCategory->id)->take(3)->get();
+        if(!empty($ugandaCategory && $tanzaniaCategory))
+        {
 
-        $tanzaniaSafaris = Safari::where('categoryId', $tanzaniaCategory->id)->take(3)->get();
+            $ugandaSafaris = Safari::where('categoryId', $ugandaCategory->id)->take(3)->get();
 
-        // locations
-        $locations = TouristLocation::take(3)->get();
+            $tanzaniaSafaris = Safari::where('categoryId', $tanzaniaCategory->id)->take(3)->get();
 
-        // gallery
-        $gallery = Safari::take(6)->get();
+            // locations
+            $locations = TouristLocation::take(3)->get();
 
-        return view('customer.land', compact('categories', 'featuredSafaris', 'kenyaSafaris','ugandaSafaris', 'tanzaniaSafaris', 'kenyaLocalSafaris', 'kenyaMultipleDaySafaris', 'locations','gallery'));
+            // gallery
+            $gallery = Safari::take(6)->get();
+
+            return view('customer.land', compact('categories', 'featuredSafaris', 'kenyaLocalSafaris', 'ugandaSafaris', 'tanzaniaSafaris', 'kenyaMultipleDaySafaris', 'locations','gallery'));
+
+        }
+        else {
+
+            // locations
+            $locations = TouristLocation::take(3)->get();
+
+            // gallery
+            $gallery = Safari::take(6)->get();
+
+            return view('customer.land', compact('categories', 'featuredSafaris', 'kenyaLocalSafaris', 'kenyaMultipleDaySafaris', 'locations','gallery'));
+        }
+
+        
     }
     /**
      * View safari.

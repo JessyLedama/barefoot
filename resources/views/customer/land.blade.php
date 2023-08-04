@@ -247,6 +247,7 @@
         </a>
     </div>
 
+    @if(!empty($ugandaSafaris))
     <!-- Uganda Safaris -->
     <div class="clearfix campaign-container">
         @foreach ($ugandaSafaris as $safari)
@@ -292,6 +293,7 @@
         </a>
         @endforeach
     </div>
+    @endif
 
     <!-- Tanzania safaris title -->
     <div class="photo-featured-3">
@@ -310,6 +312,7 @@
         </a>
     </div>
 
+    @if(!empty($tanzaniaSafaris))
     <!-- Tanzania safaris -->
     <div class="clearfix campaign-container">
         @foreach ($tanzaniaSafaris as $safari)
@@ -355,6 +358,7 @@
         </a>
         @endforeach
     </div>
+    @endif
 
     <!-- Top tourist locations -->
     <div class="locations-background"> 
