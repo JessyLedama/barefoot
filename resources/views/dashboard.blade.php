@@ -24,7 +24,7 @@
                 @else
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <h2>
-                        Create new subCategories
+                        Create new Categories
                     </h2>
                     <a href="{{ route('admin.categories.create') }}"> Create New Categories </a>
                 </div>
@@ -41,15 +41,15 @@
                 @if(count($subCategories) > 0)
                     @foreach($subCategories as $category)
                     <div class="p-6 text-gray-900 dark:text-gray-100">
-                        Categories <p> {{ $category->name }} </p>
+                        Sub Categories <p> {{ $category->name }} </p>
                     </div>
                     @endforeach
                 @else
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <h2>
-                        Create new subCategories
+                        Create new Sub Categories
                     </h2>
-                    <a href="{{ route('admin.subcategories.create') }}"> Create New Categories </a>
+                    <a href="{{ route('admin.subcategories.create') }}"> Create New Sub Categories </a>
                 </div>
                 @endif
             </div>
@@ -74,7 +74,7 @@
                 @else
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <h2>
-                        Create new safaris
+                        Create new Safaris
                     </h2>
                     <a href="{{ route('admin.safaris.create') }}"> Create New Safaris </a>
                 </div>
