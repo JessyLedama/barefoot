@@ -103,6 +103,10 @@
                 <h4>Select subcategory</h4>
 
                 <select name="subcategoryId" required>
+                    <option value="Select Sub Category"> 
+                        Select Sub Category 
+                    </option>
+                    
                     @foreach ($subCategories as $subCategory)
                         <option value="{{ $subCategory->id }}" {{ $subCategory->id == old('subcategoryId') ? 'selected' : ''}}>
                                 {{ ucwords($subCategory->category->name) }} - {{ ucwords($subCategory->name) }}
