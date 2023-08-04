@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('seos', function (Blueprint $table) {
-            $table->string('safariId');
+            $table->string('safariId')->nullable();
         });
     }
 

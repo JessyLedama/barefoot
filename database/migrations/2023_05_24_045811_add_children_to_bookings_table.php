@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('bookings', function (Blueprint $table) {
-            $table->string('children');
-            $table->string('safariId');
-            $table->string('citizenship');
+            $table->string('children')->nullable();
+            $table->string('safariId')->nullable();
+            $table->string('citizenship')->nullable();
         });
     }
 
