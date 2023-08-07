@@ -16,6 +16,11 @@ class DashboardController extends Controller
         $safaris = Safari::with('subCategory')->paginate(10);
         $subCategories = SubCategory::paginate(5);
 
-        return view('dashboard', compact('categories', 'safaris', 'subCategories'));
+        return view('dashboard.index', compact('categories', 'safaris', 'subCategories'));
+    }
+
+    public function dashboard() {
+
+        return view('dashboard.index');
     }
 }

@@ -128,6 +128,13 @@
                                     </span>
                                 </li>
                                 <li>
+                                    <span onclick="window.location.href = `{{ route('dashboard') }}`">
+                                        <i class="lnr lnr-user"></i>
+
+                                        Dashboard
+                                    </span>
+                                </li>
+                                <li>
                                     
                                         <i class="lni-package"></i>
 

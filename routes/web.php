@@ -40,6 +40,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
+
 Route::get('/safaris/{safari}', [HomeController::class, 'show']);
 
 Route::get('/kenya-safaris/', [HomeController::class, 'kenyaSafaris']);

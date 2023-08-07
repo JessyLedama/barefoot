@@ -5,6 +5,13 @@
                 My Account
             </a>
         </li>
+
+        <li>
+            <a href="{{ route('dashboard') }}">
+                Dashboard
+            </a>
+        </li>
+
         <li>
             <div data-toggle="categories-sub-menu" class="toggle-sub-menu clearfix">
                 <span class="pull-left">
