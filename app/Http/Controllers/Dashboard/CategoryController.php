@@ -79,7 +79,9 @@ class CategoryController extends Controller
      */
     public function update(UpdateCategoryRequest $request, Category $category)
     {
-        $category->update($request->all());
+        $slug = strtolower(str_replace(' ', '-', $request->name));
+
+        $category->update($request->except(['slug']) + ['slug' => $slug]);
 
         $category->seo()->updateOrCreate([
 

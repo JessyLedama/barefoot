@@ -9,7 +9,7 @@
         @include('dashboard.menu')
 
         <article class="card pull-right">
-            <form action="{{ route('category.update', $category) }}" method="post" id="form">
+            <form action="{{ route('admin.category.update', $category) }}" method="post" id="form">
 
                 @if (session()->has('success'))
                     <span class="alert alert-success">
@@ -18,8 +18,6 @@
                 @endif
 
                 @csrf
-        
-                @method('PUT')
 
                 <div class="input-group">
                     <div class="pull-left">
@@ -28,12 +26,6 @@
                         <div class="input-group" id="name-group">
                             <input type="text" placeholder="Name" value="{{ old('name', $category->name) }}" name="name" required>
                         </div>
-                    </div>
-
-                    <div class="pull-right">
-                        <h4>Slug</h4>
-
-                        <input type="text" placeholder="Slug" value="{{ old('slug', $category->slug) }}" name="slug" required>
                     </div>
                 </div>
 

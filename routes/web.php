@@ -204,8 +204,8 @@ Route::prefix('dashboard')->middleware(['auth', ])->group(function () {
         Route::get('index', [CategoryController::class, 'index'])->name('admin.categories.index');
         Route::get('create', [CategoryController::class, 'create'])->name('admin.categories.create');
         Route::post('create', [CategoryController::class, 'store'])->name('admin.categories.store');
-        Route::get('edit', [CategoryController::class, 'edit'])->name('admin.categories.edit');
-        Route::post('edit', [CategoryController::class, 'update'])->name('admin.categories.update');
+        Route::get('edit/{category}', [CategoryController::class, 'edit'])->name('admin.categories.edit');
+        Route::post('/edit/{category}', [CategoryController::class, 'update'])->name('admin.category.update');
         Route::get('delete', [CategoryController::class, 'destroy'])->name('admin.categories.destroy');
     });
 
