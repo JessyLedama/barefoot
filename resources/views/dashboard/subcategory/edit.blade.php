@@ -8,7 +8,7 @@
         @include('dashboard.menu')
 
         <article class="card pull-right">
-            <form action="{{ route('subcategory.update', $subCategory) }}" method="post" id="form">
+            <form action="{{ route('admin.subcategory.update', $subCategory) }}" method="post" id="form">
 
                 @if (session()->has('success'))
                     <span class="alert alert-success">
@@ -18,8 +18,6 @@
 
                 @csrf
 
-                @method('PUT')
-
                 <div class="input-group clearfix">
                     <div class="pull-left">
                         <h4>Name</h4>
@@ -27,18 +25,6 @@
                         <input type="text" placeholder="Name" value="{{ old('name', $subCategory->name) }}" name="name" required>
         
                         @error('name')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    </div>
-
-                    <div class="pull-right">
-                        <h4>Slug</h4>
-
-                        <input type="text" placeholder="Slug" value="{{ old('slug', $subCategory->slug) }}" name="slug" required>
-        
-                        @error('slug')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>

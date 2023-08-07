@@ -87,7 +87,11 @@ class SubCategoryController extends Controller
      */
     public function update(UpdateSubCategoryRequest $request, SubCategory $subCategory)
     {
-        $subCategory->update($request->all());
+        $slug = strtolower(str_replace(' ', '-', $request->name));
+
+        $subCategory->update($request->except(['slug']) + [
+            'slug' => $slug,
+        ]);
 
         $subCategory->seo()->updateOrCreate([
 

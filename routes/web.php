@@ -214,7 +214,8 @@ Route::prefix('dashboard')->middleware(['auth', ])->group(function () {
         Route::get('index', [SubCategoryController::class, 'index'])->name('admin.subcategories.index');
         Route::get('create', [SubCategoryController::class, 'create'])->name('admin.subcategories.create');
         Route::post('create', [SubCategoryController::class, 'store'])->name('admin.subcategories.store');
-        Route::get('edit', [SubCategoryController::class, 'edit'])->name('admin.subcategories.edit');
+        Route::get('/edit{subCategory}', [SubCategoryController::class, 'edit'])->name('admin.subcategories.edit');
+        Route::post('/edit/{subCategory}', [SubCategoryController::class, 'update'])->name('admin.subcategory.update');
         Route::get('/delete', [SubCategoryController::class, 'destroy'])->name('admin.subcategories.destroy');
     });
 
