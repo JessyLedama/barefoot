@@ -357,7 +357,7 @@
             </div>  
         </a>
         @endforeach
-    </div>
+    </div>  
     @endif
 
     <!-- Top tourist locations -->

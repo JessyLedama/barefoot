@@ -75,10 +75,6 @@
                     <a class="designers" href="https://www.facebook.com/gorobrands/" target="_blank">
                         <strong style="margin-left: -15px !important";>Goro Brands</strong>
                     </a>
-                    &
-                    <a class="designers" target="_blank" href="https://simitechnologies.co.ke" target="_blank">
-                        <strong style="margin-left: -15px !important";>SIMI Technologies</strong>
-                    </a>
                 </span>
             </p>
         </div>

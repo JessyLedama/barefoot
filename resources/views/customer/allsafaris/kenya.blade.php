@@ -18,13 +18,13 @@
     <h1 class="section-content-title">KENYA SAFARIS</h1>
 
     <div class="row">
-        <div class="col-md-6 button locala">
-            <a href="/kenya-local-safaris/"> Local Safaris </a>
-        </div>
-
-        <div class="col-md-6 button localb">
-            <a href="/kenya-multiple-day-safaris/"> Multiple Day Safaris </a>
-        </div>
+        @foreach($kenyaSubcategories as $subcategory)
+            <div class="col-md-6 button local-subcategory">
+                <a href="{{ url("/subcategory/$subcategory->slug/") }}"> 
+                    {{ $subcategory->name }} 
+                </a>
+            </div>
+        @endforeach
     </div>
 
     @foreach ($kenyaSafaris as $safari)
