@@ -47,7 +47,7 @@
                     <span class="review">(5)</span>
                 </div> -->
                 @php 
-                    $safarii = html_entity_decode($safari->shortDescription);
+                    $safarii = html_entity_decode($safari->description);
                     $safarii = strip_tags($safarii);
                 @endphp
                 <p class="campaign-description">
