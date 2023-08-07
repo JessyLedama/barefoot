@@ -215,15 +215,10 @@
             
         </article>
     </section>
-    
-    
 </body>
 @endsection
 
-
 @section('css')
-    
-  
 
 @endsection
 

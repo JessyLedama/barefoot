@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Customer;
 
-use App\Booking;
+use App\Models\Booking;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -15,9 +15,9 @@ class BookingController extends Controller
      */
     public function index()
     {
-        $bookings = Booking::where('')->latest()->paginate(10);
+        $orders = Booking::where('')->latest()->paginate(10);
 
-        return view('dashboard.booking.index', compact('bookings'));
+        return view('dashboard.booking.index', compact('orders'));
     }
 
     /**

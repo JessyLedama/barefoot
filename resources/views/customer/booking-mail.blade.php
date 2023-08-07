@@ -16,8 +16,9 @@
     
     <span style="font-weight:500"> Citizenship</span> {{$resident}} 
         
-    <span style="font-weight:500"> Country:  </span>{{$country}}
+    <span style="font-weight:500"> Country:  </span>{{$country}} <br />
 
+    <span style="font-weight:500"> Price:  </span>{{$price}} </br />
     <h3>Additional Notes</h3>
     <p> {{$additionalNotes}} </p>
     

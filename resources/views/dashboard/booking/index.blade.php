@@ -1,4 +1,4 @@
-@extends('main')
+@extends('layouts/app-pages')
 
 @section('title', 'Orders | ' . config('app.name'))
 
@@ -47,4 +47,5 @@
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/dashboard/main.css') }}">
     <link rel="stylesheet" href="{{ asset('css/dashboard/order/index.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/dashboard/categories.css') }}">
 @endsection

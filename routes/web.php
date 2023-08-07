@@ -16,6 +16,8 @@ use App\Http\Controllers\Customer\TouristLocationsController;
 use App\Http\Controllers\Dashboard\TouristLocationsController as AdminTourist;
 use App\Http\Controllers\Customer\AccountController;
 use App\Http\Controllers\Customer\SubCategoryController as CustomerSubcategory;
+use App\Http\Controllers\Customer\BookingController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -224,6 +226,17 @@ Route::prefix('dashboard')->middleware(['auth', ])->group(function () {
         Route::get('edit', [SafariController::class, 'edit'])->name('admin.safaris.edit');
         Route::delete('/delete', [SafariController::class, 'destroy'])->name('admin.safaris.destroy');
         Route::delete('safaris/{safari}/delete/gallery', [SafariController::class, 'destroyInGallery'])->name('safari.destroy.gallery');
+        
+    });
+
+    // Bookings
+    Route::prefix('bookings')->group(function(){
+        Route::get('index', [BookingController::class, 'index'])->name('admin.bookings.index');
+        Route::get('create', [BookingController::class, 'create'])->name('admin.bookings.create');
+        Route::post('create', [BookingController::class, 'store'])->name('admin.bookings.store');
+        Route::get('edit', [BookingController::class, 'edit'])->name('admin.bookings.edit');
+        Route::delete('/delete', [BookingController::class, 'destroy'])->name('admin.bookings.destroy');
+        Route::delete('bookings/{booking}/delete/gallery', [BookingController::class, 'destroyInGallery'])->name('booking.destroy.gallery');
         
     });
 

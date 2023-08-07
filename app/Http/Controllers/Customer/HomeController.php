@@ -184,6 +184,10 @@ class HomeController extends Controller
     {
         $booking = Booking::create($request->all());
 
+        $safariSlug = strtolower(str_replace(' ', '-', $request->safariId));
+
+        $safari = Safari::where('slug', $safariSlug)->first();
+
         $emailData = [
             'name' => $request->firstName,
             'email' => $request->email,
@@ -197,13 +201,14 @@ class HomeController extends Controller
             'citizen' => $request->citizen,
             'resident' => $request->resident,
             'nonResident' => $request->non_resident,
+            'price' => $safari->price_from,
         ];
 
-        // Mail::send('customer.booking-mail', $emailData, function($message){
-        //     $message->to('sirjayliste@gmail.com', 'Bookings: Barefoot Adventures')->subject
-        //         ('Testing');
-        //     $message->from('xyz@gmail.com','Barefoot Adventures');
-        // });
+        Mail::send('customer.booking-mail', $emailData, function($message){
+            $message->to('sirjayliste@gmail.com', 'Bookings: Barefoot Adventures')->subject
+                ('Booking Received');
+            $message->from('info@barefootadventures.africa','Barefoot Adventures');
+        });
 
         session()->flash('success', 'Your booking has been made.');
 

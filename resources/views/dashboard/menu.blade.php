@@ -86,6 +86,31 @@
         </li>
 
         <li>
+            <div data-toggle="bookings-sub-menu" class="toggle-sub-menu clearfix">
+                <span class="pull-left">
+                    Bookings
+                </span>
+
+                <span class="pull-right toggle-icon">
+                    <i class="lni-chevron-down"></i>
+                </span>
+            </div>
+
+            <ul id="bookings-sub-menu" class="sub-menu">
+                <li>
+                    <a href="{{ route('admin.bookings.index') }}">
+                        All Bookings
+                    </a>
+                </li>
+                <!-- <li>
+                    <a href="{{ route('admin.bookings.create') }}">
+                        Add Safari
+                    </a>
+                </li> -->
+            </ul>
+        </li>
+
+        <li>
             <div data-toggle="locations-sub-menu" class="toggle-sub-menu clearfix">
                 <span class="pull-left">
                     Locations
