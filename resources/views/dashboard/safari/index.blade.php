@@ -12,7 +12,7 @@
             <div id="safaris">
                 <h4 class="clearfix desktop">
                     <span class="pull-left">
-                            Safaris
+                        Safaris
                     </span>
                     <a href="{{ route('admin.safaris.create') }}" class="pull-right">
                         Add safari
@@ -50,11 +50,6 @@
                             <a href="{{ route('admin.safaris.edit', $safari) }}">
                                 <i class="lni-pencil-alt"></i>
                                 Edit
-                            </a>
-
-                            <a href="{{ route('safari.edit-price', $safari) }}">
-                                <i class="lni-pencil-alt"></i>
-                                Edit Price
                             </a>
 
                             <a onclick="confirm('Are you sure to delete this safari') ? document.getElementById('delete-form-{{ $safari->id }}').submit() : NaN">

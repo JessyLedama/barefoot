@@ -170,21 +170,54 @@ class SafariController extends Controller
      */
     public function update(Request $request, Safari $safari)
     {
+        $safari = Safari::where('id', $safari->id)->first();
+
+        $slug = strtolower(str_replace(' ', '-', $request->name));
+
+        if(!empty($request->cover)){
+            // get cover image
+            $cover = $request->file('cover')->store('safaris', ['disk' => 'public']);
+        }
         
-        $safari->update([
-            'name' => $request->name,
-            'slug' => $request->slug,
-            'price_from' => $request->price_from,
-            'residents_price' => $request->residents_price,
-            'non_residents_price' => $request->non_residents_price,
-            'shortDescription' => $request->shortDescription,
-            'description' => $request->description,
-        ]);
+
+        // get gallery data
+        $gallery = [] + array_map(function ($image) {
+
+            return $image->store('safaris', ['disk' => 'public']);
+
+        }, $request->file('gallery') ?? []);
+
+        $safari->name = $request->name;
+        $safari->slug = $slug;
+        $safari->price_from = $request->price_from;
+        $safari->residents_price = $request->residents_price;
+        $safari->non_residents_price = $request->non_residents_price;
+        $safari->description = $request->description;
+        if(!empty($cover)){
+            $safari->cover = $cover;
+        }
+
+        if(!empty($gallery)){
+            $safari->gallery = implode('|', $gallery);
+        }
+        
+        $safari->entry_fee = $request->entry_fee ? 1 : 0;
+        $safari->transport = $request->transport ? 1 : 0;
+        $safari->tour_guide = $request->tour_guide ? 1 : 0;
+        $safari->drinks = $request->drinks ? 1 : 0;
+        $safari->lunch = $request->lunch ? 1 : 0;
+        $safari->dinner = $request->dinner ? 1 : 0;
+        $safari->accomodation = $request->accomodation ? 1 : 0;
+
+
+        $safari->save();
 
         session()->flash('success', 'The safari has been updated.');
 
-        return view('dashboard.safari.edit-price', compact('safari'));
-        // return back();
+
+
+        // return view('dashboard.safari.edit-price', compact('safari'));
+        return back();
     }
 
     /**

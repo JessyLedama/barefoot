@@ -12,7 +12,7 @@
         @include('dashboard.menu')
 
         <article class="card pull-right">
-            <form action="{{ route('safari.update', $safari) }}" method="post" id="form" enctype="multipart/form-data">
+            <form action="{{ route('admin.safari.update', $safari) }}" method="post" id="form" enctype="multipart/form-data">
 
                 @if (session()->has('success'))
                     <span class="alert alert-success">
@@ -28,23 +28,11 @@
 
                 @csrf
 
-                @method('PUT')
-
                 <h4>Name</h4>
 
                 <input type="text" placeholder="Name" value="{{ old('name', $safari->name) }}" name="name" required>
 
                 @error('name')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
-
-                <h4>Slug</h4>
-
-                <input type="text" placeholder="Slug" value="{{ old('slug', $safari->slug) }}" name="slug" required>
-
-                @error('slug')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
@@ -107,7 +95,7 @@
 
                 <h4>Overview</h4>
                 
-                <textarea id="shortDescription" name="shortDescription">&lt;p&gt;{{ old('shortDescription', $safari->shortDescription) }}&lt;/p&gt;</textarea>
+                <textarea id="shortDescription" name="shortDescription">&lt;p&gt;{{ old('description', $safari->description) }}&lt;/p&gt;</textarea>
 
 
                 <h4>Change cover image</h4>

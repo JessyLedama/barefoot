@@ -13,7 +13,7 @@
         @include('dashboard.menu')
 
         <article class="card pull-right">
-            <form action="{{ route('safari.update', $safari) }}" method="post" id="form">
+            <form action="{{ route('admin.safari.update', $safari) }}" method="post" id="form">
 
                 @if (session()->has('success'))
                     <span class="alert alert-success">
