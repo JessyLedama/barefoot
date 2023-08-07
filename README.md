@@ -1,6 +1,6 @@
 <p align="center">
     <a href="https://barefootadventures.africa" target="_blank">
-        <img src="{{ asset('/public/images/Barefoot-Adventure-Logo.png') }}" width="400">
+        <img src="{{ asset('/images/Barefoot-Adventure-Logo.png') }}" width="400">
     </a>
 </p>
 
