@@ -126,7 +126,7 @@ class HomeController extends Controller
     public function ugandaSafaris()
     {
         $ugandaSafaris = [];
-        $safaris = Safari::with('subCategory')->with('category')->get();
+        $safaris = Safari::all();
         $ugandaCategory = Category::where('slug', 'uganda-safaris')->first();
         
         if(!empty($safaris)){
@@ -146,7 +146,7 @@ class HomeController extends Controller
     public function tanzaniaSafaris()
     {
         $tanzaniaSafaris = [];
-        $safaris = Safari::with('subCategory')->get();
+        $safaris = Safari::all();
         $tanzaniaCategory = Category::where('slug', 'tanzania-safaris')->first();
         
         if(!empty($safaris)){
