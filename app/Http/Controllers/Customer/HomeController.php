@@ -205,7 +205,7 @@ class HomeController extends Controller
         ];
 
         Mail::send('customer.booking-mail', $emailData, function($message){
-            $message->to('sirjayliste@gmail.com', 'Bookings: Barefoot Adventures')->subject
+            $message->to('info@barefootadventures.africa', 'Bookings: Barefoot Adventures')->subject
                 ('Booking Received');
             $message->from('info@barefootadventures.africa','Barefoot Adventures');
         });
